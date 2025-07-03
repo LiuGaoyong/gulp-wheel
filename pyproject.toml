@@ -1,0 +1,35 @@
+[project]
+name = "gulp"
+dynamic = ["version"]
+description = "Unoffical GULP Python Package."
+authors = [
+    { name = "The GULP Developers", email = "gulpcode@curtin.edu.au" },
+    { name = "Liu Gaoyong", email = "liugaoyong_88@163.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ['importlib_metadata>=1.4; python_version < "3.8"']
+
+[project.urls]
+repository = "https://github.com/LiuGaoyong/gulp-wheel.git"
+gulp_repository = "https://gulp.curtin.edu.au/index.html"
+gulp_documentation = "https://gulp.curtin.edu.au/help/help_60_txt.html"
+
+[project.scripts]
+gulp = "gulp.executable:gulp"
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+python = ">=3.7"
+
+[tool.pixi.tasks]
