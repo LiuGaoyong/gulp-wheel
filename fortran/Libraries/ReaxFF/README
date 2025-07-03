@@ -1,0 +1,18 @@
+ReaxFF library files:
+---------------------
+
+This directory contains ReaxFF library files in the original ffield format used by Adri van Duin's original code. 
+These can now be read into GULP directly using the "reaxff_library" option.
+
+At the end of each are comments giving test results performed using GULP and the original ReaxFF code. 
+Where possible, values are compared against some of those available in the original reference for the parameters. 
+Any descrepancies are also highlighted. Aside from properties of structures, such as optimised lattice parameters
+the components of the ReaxFF energy are compared between ReaxFF and GULP for one or more structures. 
+
+NB: GULP introduces a number of changes to the ReaxFF formalism for smoothness, such as tapering bond orders to zero at the tolerance. 
+    This leads to (usually) small changes in the energy and properties. To reproduce the original ReaxFF behaviour the following changes can be made to the GULP input:
+    1) Add the keyword "strict" which removes tapering
+    2) Add the option "reaxfftol 0.001 0.005". The first tolerance is provided in the ffield file and so can be set accordingly. 
+       The second tolerance is for the valence energy and in GULP defaults to 0.001, but was 0.005 in the original code.
+
+In addition to the ffield files, the GULP input files used for testing are also made available in this directory.

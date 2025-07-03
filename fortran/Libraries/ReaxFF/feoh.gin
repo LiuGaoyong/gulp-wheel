@@ -1,0 +1,29 @@
+opti conp prop comp #strict
+name hematite
+cell
+5.0355 5.0355 13.7471 90 90 120
+frac
+Fe   0.00000   0.00000   0.35522
+O    0.69395   0.00000   0.25000
+space
+R -3 C
+name goethite
+cell
+9.9134 3.0128 4.5800 90 90 90
+frac
+Fe   0.14590   0.25000  -0.04860 
+H   -0.10100   0.25000  -0.39900 
+O   -0.19900   0.25000   0.28500 
+O   -0.05170   0.25000  -0.19600 
+space
+P N M A
+name wustite
+cell
+5.2615 3.0334 3.0602 90 124.649 90
+frac
+Fe 0.0 0.0 0.0
+O  0.0 0.5 0.5
+space
+C 2/m
+reaxff_library ffield_FeOH
+#reaxfftol 0.001 0.005

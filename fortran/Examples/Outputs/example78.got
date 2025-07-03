@@ -1,0 +1,250 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                       Curtin Institute for Computation                       *
+*                    School of Molecular and Life Sciences                     *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 6.2.0 * Last modified =  22nd August 2023                          *
+********************************************************************************
+*  single       - perform a single point run                                   *
+*  montecarlo   - perform a Monte Carlo run                                    *
+*  noflags      - no flags to be read in, assumed to all be zero               *
+*  distance     - calculate distances                                          *
+********************************************************************************
+
+  Job Started  at 10:13.39 23rd August     2023                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =      1
+
+********************************************************************************
+*  Input for Configuration =   1                                               *
+********************************************************************************
+
+  Formula = Si4                                                         
+
+  Number of irreducible atoms/shells =       4
+
+
+  Total number atoms/shells =       4
+
+  Dimensionality = 2               :  Surface
+
+
+
+  Surface Cartesian vectors (Angstroms) :
+
+        4.000000    0.000000    0.000000
+       -2.000000    3.464102    0.000000
+
+  Surface cell parameters (Angstroms/Degrees):
+
+  a =       4.0000    alpha = 120.0000
+  b =       4.0000
+
+  Initial surface area   =     13.856406 Angs**2
+
+  Initial surface dipole =      0.000000 e.Angs
+
+  Temperature of configuration =   300.     K 
+
+  Mixed fractional/Cartesian coordinates of surface :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Angs)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 Si1   c    0.000000    0.000000      0.0000     0.00000    1.000000    
+      2 Si1   c    0.500000    0.000000      0.0000     0.00000    1.000000    
+      3 Si1   c    0.000000    0.500000      0.0000     0.00000    1.000000    
+      4 Si1   c    0.500000    0.500000      0.0000     0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+  Distance calculation :
+
+
+  Cutoff for distances  =      4.100000 Angstroms
+
+--------------------------------------------------------------------------------
+  Asymmetric unit site  Full lattice sites    No.  Distance      No.  Distance
+      No.   At.No.            At.No.                (Angs)             (Angs) 
+--------------------------------------------------------------------------------
+       1   Si1   core        Si1   core         6    2.0000        6    3.4641
+                                                6    4.0000
+--------------------------------------------------------------------------------
+       2   Si1   core        Si1   core         6    2.0000        6    3.4641
+                                                6    4.0000
+--------------------------------------------------------------------------------
+       3   Si1   core        Si1   core         6    2.0000        6    3.4641
+                                                6    4.0000
+--------------------------------------------------------------------------------
+       4   Si1   core        Si1   core         6    2.0000        6    3.4641
+                                                6    4.0000
+--------------------------------------------------------------------------------
+
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    Si1      Core       14      28.09   0.000000   1.200  0.000  2.100          
+    Si2      Core       14      28.09   0.000000   1.200  0.000  2.100          
+--------------------------------------------------------------------------------
+
+
+  Species with non-zero spin for Ising Hamiltonian: 
+
+--------------------------------------------------------------------------------
+  Species    Type    Spin    
+--------------------------------------------------------------------------------
+    Si1      Core    0.5000
+    Si2      Core   -0.5000
+--------------------------------------------------------------------------------
+
+
+  Lattice summation method               =    Ewald          (3-D)
+                                         =    Parry          (2-D)
+                                         =    Saunders et al (1-D)
+  Accuracy factor for lattice sums       =   12.000
+
+
+  Analytic derivatives to be used
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  General interatomic potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+Si1  c Si1  c j2            j2 J2           -1.0000000    eV        0.000  2.200
+--------------------------------------------------------------------------------
+Si1  c Si2  c j2            j2 J2           -1.0000000    eV        0.000  2.200
+--------------------------------------------------------------------------------
+Si2  c Si2  c j2            j2 J2           -1.0000000    eV        0.000  2.200
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*  Output for configuration   1                                                *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           3.00000000 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           3.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =             289.4541 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+********************************************************************************
+*  Monte Carlo                                                                 *
+********************************************************************************
+
+  Number of trial MC steps      =          100
+
+  Output frequency in steps     =          100
+
+  Sample frequency in steps     =           10
+
+  Probability of creation       =     0.000000
+  Probability of destruction    =     0.000000
+  Probability of translation    =     0.000000
+  Probability of rotation       =     0.000000
+  Probability of swap           =     0.000000
+  Probability of species change =     1.000000
+  Probability of strain         =     0.000000
+
+  Maximum Cartesian shift       =     0.050000 Angstroms
+  Maximum rotational shift      =   180.000000 degrees
+  Maximum strain shift          =     0.100000
+  Number of possible swaps      =            0
+  Number of possible trans      =            1
+
+
+  Trials:       100 Accepted:         2 Mean E/N:       -0.500000     4.000000
+
+  Monte Carlo properties :
+
+  Mean number of atoms =        4.000000
+  Mean   energy        =       -0.500000
+  Lowest energy        =       -1.000000
+
+  Acceptance ratios :
+
+--------------------------------------------------------------------------------
+ Operation          Attempts            Accepted            %Accepted
+--------------------------------------------------------------------------------
+ Transform                   100                   2           2.0000
+--------------------------------------------------------------------------------
+ Total                       100                   2           2.0000
+--------------------------------------------------------------------------------
+
+  Final Cartesian surface vectors (Angstroms) :
+
+        4.000000    0.000000    0.000000
+       -2.000000    3.464102    0.000000
+
+
+  Final surface cell parameters :
+
+--------------------------------------------------------------------------------
+       a            4.000000 Angstrom 
+       b            4.000000 Angstrom 
+       alpha      120.000000 Degrees  
+--------------------------------------------------------------------------------
+
+
+  Final fractional/Cartesian coordinates of atoms :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y          z          Radius
+        Label       (Frac)      (Frac)     (Angs)       (Angs) 
+--------------------------------------------------------------------------------
+     1  Si2   c     0.000000    0.000000    0.000000    0.000000
+     2  Si2   c     0.500000    0.000000    0.000000    0.000000
+     3  Si1   c     0.000000    0.500000    0.000000    0.000000
+     4  Si1   c     0.500000    0.500000    0.000000    0.000000
+--------------------------------------------------------------------------------
+
+
+  Peak dynamic memory used =       1.79 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of real space energy and derivatives                0.0003
+  Monte Carlo operations excluding energy                         0.0002
+--------------------------------------------------------------------------------
+  Total CPU time                                                  0.0028
+--------------------------------------------------------------------------------
+
+
+  Dump file written as example78.res
+
+
+  Job Finished at 10:13.39 23rd August     2023                               
+

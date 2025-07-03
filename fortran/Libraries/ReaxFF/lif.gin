@@ -1,0 +1,14 @@
+opti conp prop phon noden #strict
+cart
+Li core 0.0 0.0 0.0 
+F  core 1.5 0.0 0.0
+cell
+4.1 4.1 4.1 90 90 90
+frac
+Li core 0.0 0.0 0.0 
+F  core 0.5 0.5 0.5
+space
+225
+
+reaxff_library ffield_CHOSMoNiLiBFPN
+#reaxfftol 0.001 0.005

@@ -1,0 +1,19 @@
+opti conp prop strict
+name fluorite
+cell
+5.4631 5.4631 5.4631 90 90 90
+frac
+Ce core 0.00 0.00 0.00
+O  core 0.25 0.25 0.25
+space
+225
+name rutile
+cell
+   4.593700   4.593700   2.958700  90.000000  90.000000  90.000000
+fractional    2
+Ce    core 0.0000000 0.0000000 0.0000000
+O     core 0.3047900 0.3047900 0.0000000
+space
+P 42/M N M
+reaxff_library ffield_CeO
+reaxfftol 0.001 0.005

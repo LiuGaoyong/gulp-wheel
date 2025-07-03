@@ -1,0 +1,999 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                       Curtin Institute for Computation                       *
+*                    School of Molecular and Life Sciences                     *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 6.2.0 * Last modified =  30th August 2023                          *
+********************************************************************************
+*  optimise     - perform optimisation run                                     *
+*  conp         - constant pressure calculation                                *
+*  property     - calculate properties for final geometry                      *
+*  compare      - compare initial and final structures                         *
+********************************************************************************
+
+  Job Started  at 18:27.05 30th August     2023                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =      3
+
+********************************************************************************
+*  Input for Configuration =   1 : hematite                                    *
+********************************************************************************
+
+  Formula = Fe4O6                                                       
+
+  Number of irreducible atoms/shells =       2
+
+
+  Total number atoms/shells =      10
+
+  Dimensionality = 3               :  Bulk   
+
+
+  Symmetry :
+
+  Crystal family                   :  Hexagonal   
+  Crystal class  (Groth - 1921)    :  Ditrigonal Scalenohedral             
+
+  Space group (centrosymmetric)    :  R -3 C          
+
+  Patterson group                  :  R -3 m   
+
+  Cartesian lattice vectors (Angstroms) :
+
+        2.517750    1.453624    4.582367
+       -2.517750    1.453624    4.582367
+        0.000000   -2.907247    4.582367
+
+  Primitive cell parameters :            Full cell parameters :
+
+  a =   5.4268    alpha =  55.2842       a =   5.0355    alpha =  90.0000
+  b =   5.4268    beta  =  55.2842       b =   5.0355    beta  =  90.0000
+  c =   5.4268    gamma =  55.2842       c =  13.7471    gamma = 120.0000
+
+  Initial volumes (Angstroms**3):
+
+  Primitive cell =         100.624948    Full cell =         301.874844
+
+  Temperature of configuration =   0.00     K 
+
+  Pressure of configuration =         0.000 GPa 
+
+  Fractional coordinates of asymmetric unit :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Frac)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 Fe    c    0.000000    0.000000    0.355220 *   0.00000    1.000000    
+      2 O     c    0.693950 *  0.000000    0.250000     0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+  Constraints : 
+
+--------------------------------------------------------------------------------
+  Constraint no.      Unconstrained     Constrained    Coefficient    Offset
+                         Variable         Variable
+--------------------------------------------------------------------------------
+           1              Strain 1        Strain 2       1.00000      0.0000
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  Input for Configuration =   2 : goethite                                    *
+********************************************************************************
+
+  Formula = Fe4H4O8                                                     
+
+  Number of irreducible atoms/shells =       4
+
+
+  Total number atoms/shells =      16
+
+  Dimensionality = 3               :  Bulk   
+
+
+  Symmetry :
+
+  Crystal family                   :  Orthorhombic
+  Crystal class  (Groth - 1921)    :  Orthorhombic Bipyramidal             
+
+  Space group (centrosymmetric)    :  P N M A         
+
+  Patterson group                  :  P m m m  
+
+  Cartesian lattice vectors (Angstroms) :
+
+        9.913400    0.000000    0.000000
+        0.000000    3.012800    0.000000
+        0.000000    0.000000    4.580000
+
+  Cell parameters (Angstroms/Degrees):
+
+  a =       9.9134    alpha =  90.0000
+  b =       3.0128    beta  =  90.0000
+  c =       4.5800    gamma =  90.0000
+
+  Initial cell volume =         136.791279 Angs**3
+
+  Temperature of configuration =   0.00     K 
+
+  Pressure of configuration =         0.000 GPa 
+
+  Fractional coordinates of asymmetric unit :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Frac)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 Fe    c    0.145900 *  0.250000    0.951400 *   0.00000    1.000000    
+      2 H     c    0.899000 *  0.250000    0.601000 *   0.00000    1.000000    
+      3 O     c    0.801000 *  0.250000    0.285000 *   0.00000    1.000000    
+      4 O     c    0.948300 *  0.250000    0.804000 *   0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+********************************************************************************
+*  Input for Configuration =   3 : wustite                                     *
+********************************************************************************
+
+  Formula = FeO                                                         
+
+  Number of irreducible atoms/shells =       2
+
+
+  Total number atoms/shells =       2
+
+  Dimensionality = 3               :  Bulk   
+
+
+  Symmetry :
+
+  Crystal family                   :  Monoclinic  
+  Crystal class  (Groth - 1921)    :  Monoclinic Prismatic                 
+
+  Space group (centrosymmetric)    :  C 2/M           
+
+  Patterson group                  :  C 2/m    
+
+  Cartesian lattice vectors (Angstroms) :
+
+        2.630750    1.516700    0.000000
+       -2.630750    1.516700    0.000000
+       -1.739869    0.000000    2.517475
+
+  Primitive cell parameters :            Full cell parameters :
+
+  a =   3.0366    alpha =  60.4915       a =   5.2615    alpha =  90.0000
+  b =   3.0366    beta  = 119.5085       b =   3.0334    beta  = 124.6490
+  c =   3.0602    gamma = 120.0707       c =   3.0602    gamma =  90.0000
+
+  Initial volumes (Angstroms**3):
+
+  Primitive cell =          20.089744    Full cell =          40.179488
+
+  Temperature of configuration =   0.00     K 
+
+  Pressure of configuration =         0.000 GPa 
+
+  Fractional coordinates of asymmetric unit :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Frac)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 Fe    c    0.000000    0.000000    0.000000     0.00000    1.000000    
+      2 O     c    0.000000    0.500000    0.500000     0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    Fe       Core       26      55.85   0.000000   1.340  0.000  2.000          
+    O        Core        8      16.00   0.000000   0.730  0.000  1.360          
+    H        Core        1       1.01   0.000000   0.370  0.000  1.080          
+--------------------------------------------------------------------------------
+
+
+  Lattice summation method               =    Ewald          (3-D)
+                                         =    Parry          (2-D)
+                                         =    Saunders et al (1-D)
+  Accuracy factor for lattice sums       =   12.000
+
+
+  Analytic derivatives to be used
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  ReaxFF forcefield to be used
+
+  ReaxFF Coulomb cutoff =  10.0000 Ang
+  ReaxFF VDW     cutoff =  10.0000 Ang
+  ReaxFF H-bond  cutoff =   7.5000 Ang
+
+  ReaxFF pairwise bond order       threshold = 0.00100000000000
+  ReaxFF angle/torsion bond order  threshold = 0.00100000000000
+  ReaxFF bond order double product threshold = 0.00000100000000
+  ReaxFF bond order triple product threshold = 0.00000000100000
+  ReaxFF hydrogen-bond bond order  threshold = 0.01000000000000
+
+
+********************************************************************************
+*  Output for configuration   1 : hematite                                     *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =         -48.30849833 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy : 
+    Primitive unit cell      =         -48.30849833 eV    
+    Non-primitive unit cell  =        -144.92549499 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy (in kJmol-1): 
+    Primitive unit cell      =           -4661.0316 kJ/(mole unit cells)
+    Non-primitive unit cell  =          -13983.0949 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+
+  Number of variables =        4
+
+  Maximum number of calculations  =          1000
+  Maximum Hessian update interval =            10
+  Maximum step size               =   1.000000000
+  Maximum parameter tolerance     =   0.000010000
+  Maximum function  tolerance     =   0.000010000
+  Maximum gradient  tolerance     =   0.001000000
+  Maximum gradient  component     =   0.010000000
+
+  Symmetry constrained optimisation
+
+  Cell parameters to be optimised using strains
+
+  Newton-Raphson optimiser to be used
+
+  BFGS hessian update to be used
+
+  Lower half triangular hessian to be used
+
+  Start of bulk optimisation :
+
+  Cycle:      0 Energy:       -48.308498  Gnorm:     13.076437  CPU:    0.187
+  ** Hessian calculated **
+  Cycle:      1 Energy:       -49.222911  Gnorm:      6.583154  CPU:    0.197
+  Cycle:      2 Energy:       -49.260508  Gnorm:      2.705260  CPU:    0.208
+  Cycle:      3 Energy:       -49.282448  Gnorm:      0.466778  CPU:    0.217
+  Cycle:      4 Energy:       -49.282836  Gnorm:      0.070445  CPU:    0.225
+  Cycle:      5 Energy:       -49.282843  Gnorm:      0.002021  CPU:    0.234
+
+
+  **** Optimisation achieved ****
+
+
+  Final energy =     -49.28284317 eV      
+  Final Gnorm  =       0.00021657
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =         -49.28284317 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy : 
+    Primitive unit cell      =         -49.28284317 eV    
+    Non-primitive unit cell  =        -147.84852950 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy (in kJmol-1): 
+    Primitive unit cell      =           -4755.0410 kJ/(mole unit cells)
+    Non-primitive unit cell  =          -14265.1230 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Final asymmetric unit coordinates :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y           z         Radius
+        Label       (Frac)      (Frac)      (Frac)       (Angs) 
+--------------------------------------------------------------------------------
+     1  Fe    c     0.000000    0.000000    0.370760    0.000000
+     2  O     c     0.685907    0.000000    0.250000    0.000000
+--------------------------------------------------------------------------------
+
+  Final Cartesian lattice vectors (Angstroms) :
+
+        2.452606    1.416013    4.198500
+       -2.452606    1.416013    4.198500
+        0.000000   -2.832025    4.198500
+
+
+  Final cell parameters and derivatives :
+
+--------------------------------------------------------------------------------
+       a            5.064363 Angstrom     dE/de1(xx)    -0.000027 eV/strain
+       b            5.064363 Angstrom     dE/de2(yy)     0.000000 eV/strain
+       c            5.064363 Angstrom     dE/de3(zz)     0.000207 eV/strain
+       alpha       57.931561 Degrees      dE/de4(yz)     0.000000 eV/strain
+       beta        57.931561 Degrees      dE/de5(xz)     0.000000 eV/strain
+       gamma       57.931561 Degrees      dE/de6(xy)     0.000000 eV/strain
+--------------------------------------------------------------------------------
+
+  Primitive cell volume =            87.486365 Angs**3
+
+  Density of cell =      6.062483 g/cm**3
+
+  Non-primitive lattice parameters :
+
+  a    =     4.905212  b   =     4.905212  c    =    12.595500
+  alpha=    90.000000  beta=    90.000000  gamma=   120.000000
+
+  Non-primitive cell volume =           262.459095 Angs**3
+
+
+  Final internal derivatives :
+
+--------------------------------------------------------------------------------
+   No.  Atomic          a             b             c           Radius
+        Label          (eV)          (eV)          (eV)        (eV/Angs)
+--------------------------------------------------------------------------------
+      1 Fe    c       0.000000      0.000000     -0.000834      0.000000
+      2 O     c      -0.000109      0.000000      0.000000      0.000000
+--------------------------------------------------------------------------------
+  Maximum abs         0.000109      0.000000      0.000834      0.000000
+--------------------------------------------------------------------------------
+
+
+  Comparison of initial and final structures : 
+
+--------------------------------------------------------------------------------
+  Parameter   Initial value   Final value   Difference    Units      Percent
+--------------------------------------------------------------------------------
+    Volume       301.874844    262.459095   -39.415750    Angs**3    -13.06
+    a              5.035500      4.905212    -0.130288    Angstroms   -2.59
+    b              5.035500      4.905212    -0.130288    Angstroms   -2.59
+    c             13.747100     12.595500    -1.151600    Angstroms   -8.38
+    alpha         90.000000     90.000000     0.000000    Degrees      0.00
+    beta          90.000000     90.000000     0.000000    Degrees      0.00
+    gamma        120.000000    120.000000     0.000000    Degrees      0.00
+      1 x          0.000000      0.000000     0.000000    Fractional   0.00
+      1 y          0.000000      0.000000     0.000000    Fractional   0.00
+      1 z          0.355220      0.370760     0.015540    Fractional   4.37
+      2 x          0.693950      0.685907     0.008043    Fractional   1.16
+      2 y          0.000000      0.000000     0.000000    Fractional   0.00
+      2 z          0.250000      0.250000     0.000000    Fractional   0.00
+--------------------------------------------------------------------------------
+
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+    1 Fe    x       0.5394     -0.2550      0.0000
+            y       0.2550      0.5394     -0.0000
+            z       0.0000     -0.0000      1.3999
+-------------------------------------------------------------------------------
+    2 O     x      -0.7054     -0.0781     -0.0225
+            y      -0.0085     -0.6497      0.0145
+            z      -1.0846      0.4614     -0.6898
+-------------------------------------------------------------------------------
+
+
+
+
+  Elastic Constant Matrix: (Units=GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    321.5110  132.4753   93.2481   70.2661    0.0000    0.0000
+       2    132.4753  321.5110   93.2481  -70.2661    0.0000   -0.0000
+       3     93.2481   93.2481  352.3055   -0.0000    0.0000    0.0000
+       4     70.2661  -70.2661   -0.0000   80.8933    0.0000    0.0000
+       5      0.0000    0.0000    0.0000    0.0000   80.8933   70.2661
+       6      0.0000   -0.0000    0.0000    0.0000   70.2661   94.5179
+-------------------------------------------------------------------------------
+
+
+  Elastic Compliance Matrix: (Units=1/GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    0.008702 -0.006231 -0.000654 -0.012971  0.000000 -0.000000
+       2   -0.006231  0.008702 -0.000654  0.012971 -0.000000  0.000000
+       3   -0.000654 -0.000654  0.003185 -0.000000  0.000000 -0.000000
+       4   -0.012971  0.012971 -0.000000  0.034896  0.000000 -0.000000
+       5    0.000000 -0.000000  0.000000  0.000000  0.034896 -0.025942
+       6   -0.000000  0.000000 -0.000000 -0.000000 -0.025942  0.029866
+-------------------------------------------------------------------------------
+
+  Mechanical properties :
+
+-------------------------------------------------------------------------------
+  Convention :                    Reuss         Voigt         Hill
+-------------------------------------------------------------------------------
+  Bulk  Modulus (GPa)     =     181.45437     181.47449     181.46443
+  Shear Modulus (GPa)     =      36.45298      96.35129      66.40213
+-------------------------------------------------------------------------------
+  Velocity S-wave (km/s)  =       2.45212       3.98661       3.30953
+  Velocity P-wave (km/s)  =       6.16018       7.15016       6.67355
+-------------------------------------------------------------------------------
+  Compressibility (1/GPa) =    0.00551103
+-------------------------------------------------------------------------------
+  Stress axis :                     x             y             z
+-------------------------------------------------------------------------------
+  Youngs Moduli (GPa)     =     114.91307     114.91307     313.99949
+-------------------------------------------------------------------------------
+  Poissons Ratio (x)      =                     0.71600       0.20540
+  Poissons Ratio (y)      =       0.71600                     0.20540
+  Poissons Ratio (z)      =       0.07517       0.07517
+-------------------------------------------------------------------------------
+
+
+
+  Time to end of optimisation =       4.1620 seconds
+
+
+
+  Final charges from ReaxFF :
+
+--------------------------------------------------------------------------------
+    Atom no.            Atomic No.             Charge
+--------------------------------------------------------------------------------
+         1                  26                 1.0499403
+         2                  26                 1.0499403
+         3                  26                 1.0499403
+         4                  26                 1.0499403
+         5                   8                -0.6999602
+         6                   8                -0.6999602
+         7                   8                -0.6999602
+         8                   8                -0.6999602
+         9                   8                -0.6999602
+        10                   8                -0.6999602
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  Output for configuration   2 : goethite                                     *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =         -68.55500701 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =         -68.55500701 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           -6614.5102 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+
+  Number of variables =       11
+
+  Maximum number of calculations  =          1000
+  Maximum Hessian update interval =            10
+  Maximum step size               =   1.000000000
+  Maximum parameter tolerance     =   0.000010000
+  Maximum function  tolerance     =   0.000010000
+  Maximum gradient  tolerance     =   0.001000000
+  Maximum gradient  component     =   0.010000000
+
+  Symmetry constrained optimisation
+
+  Cell parameters to be optimised using strains
+
+  Newton-Raphson optimiser to be used
+
+  BFGS hessian update to be used
+
+  Lower half triangular hessian to be used
+
+  Start of bulk optimisation :
+
+  Cycle:      0 Energy:       -68.555007  Gnorm:     13.712854  CPU:    4.509
+  ** Hessian calculated **
+  Cycle:      1 Energy:       -72.178533  Gnorm:      6.234373  CPU:    4.514
+  Cycle:      2 Energy:       -72.585558  Gnorm:      2.062827  CPU:    4.519
+  Cycle:      3 Energy:       -72.606092  Gnorm:      1.557207  CPU:    4.525
+  Cycle:      4 Energy:       -72.606326  Gnorm:      1.505480  CPU:    4.530
+  ** Hessian calculated **
+  Cycle:      5 Energy:       -72.662685  Gnorm:      0.867621  CPU:    4.831
+  ** Hessian calculated **
+  Cycle:      6 Energy:       -72.921961  Gnorm:      1.085242  CPU:    5.080
+  Cycle:      7 Energy:       -72.937368  Gnorm:      1.374868  CPU:    5.087
+  Cycle:      8 Energy:       -73.064548  Gnorm:      2.488745  CPU:    5.095
+  Cycle:      9 Energy:       -73.264427  Gnorm:      2.418524  CPU:    5.104
+  Cycle:     10 Energy:       -73.345643  Gnorm:      1.813809  CPU:    5.111
+  Cycle:     11 Energy:       -73.480881  Gnorm:      1.115673  CPU:    5.119
+  Cycle:     12 Energy:       -73.509974  Gnorm:      0.219383  CPU:    5.126
+  Cycle:     13 Energy:       -73.513530  Gnorm:      0.255618  CPU:    5.132
+  Cycle:     14 Energy:       -73.515694  Gnorm:      0.196842  CPU:    5.138
+  Cycle:     15 Energy:       -73.516956  Gnorm:      0.129623  CPU:    5.145
+  ** Hessian calculated **
+  Cycle:     16 Energy:       -73.517277  Gnorm:      0.007837  CPU:    5.670
+
+
+  **** Optimisation achieved ****
+
+
+  Final energy =     -73.51727964 eV      
+  Final Gnorm  =       0.00017304
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =         -73.51727964 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =         -73.51727964 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           -7093.2937 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Final asymmetric unit coordinates :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y           z         Radius
+        Label       (Frac)      (Frac)      (Frac)       (Angs) 
+--------------------------------------------------------------------------------
+     1  Fe    c     0.172942    0.250000    0.974918    0.000000
+     2  H     c     0.950989    0.250000    0.563476    0.000000
+     3  O     c     0.782828    0.250000    0.214867    0.000000
+     4  O     c     0.962140    0.250000    0.778890    0.000000
+--------------------------------------------------------------------------------
+
+  Final Cartesian lattice vectors (Angstroms) :
+
+       10.156243    0.000000    0.000000
+        0.000000    3.019840    0.000000
+        0.000000    0.000000    4.492279
+
+
+  Final cell parameters and derivatives :
+
+--------------------------------------------------------------------------------
+       a           10.156243 Angstrom     dE/de1(xx)     0.000322 eV/strain
+       b            3.019840 Angstrom     dE/de2(yy)    -0.000137 eV/strain
+       c            4.492279 Angstrom     dE/de3(zz)    -0.000197 eV/strain
+       alpha       90.000000 Degrees      dE/de4(yz)     0.000000 eV/strain
+       beta        90.000000 Degrees      dE/de5(xz)     0.000000 eV/strain
+       gamma       90.000000 Degrees      dE/de6(xy)     0.000000 eV/strain
+--------------------------------------------------------------------------------
+
+  Primitive cell volume =           137.779250 Angs**3
+
+  Density of cell =      4.283892 g/cm**3
+
+  Non-primitive cell volume =           137.779250 Angs**3
+
+
+  Final internal derivatives :
+
+--------------------------------------------------------------------------------
+   No.  Atomic          a             b             c           Radius
+        Label          (eV)          (eV)          (eV)        (eV/Angs)
+--------------------------------------------------------------------------------
+      1 Fe    c       0.000304      0.000000     -0.000013      0.000000
+      2 H     c       0.001121      0.000000      0.000158      0.000000
+      3 O     c      -0.000586      0.000000      0.000161      0.000000
+      4 O     c      -0.000640      0.000000     -0.001144      0.000000
+--------------------------------------------------------------------------------
+  Maximum abs         0.001121      0.000000      0.001144      0.000000
+--------------------------------------------------------------------------------
+
+
+  Comparison of initial and final structures : 
+
+--------------------------------------------------------------------------------
+  Parameter   Initial value   Final value   Difference    Units      Percent
+--------------------------------------------------------------------------------
+    Volume       136.791279    137.779250     0.987971    Angs**3      0.72
+    a              9.913400     10.156243     0.242843    Angstroms    2.45
+    b              3.012800      3.019840     0.007040    Angstroms    0.23
+    c              4.580000      4.492279    -0.087721    Angstroms   -1.92
+    alpha         90.000000     90.000000     0.000000    Degrees      0.00
+    beta          90.000000     90.000000     0.000000    Degrees      0.00
+    gamma         90.000000     90.000000     0.000000    Degrees      0.00
+      1 x          0.145900      0.172942     0.027042    Fractional  18.53
+      1 y          0.250000      0.250000     0.000000    Fractional   0.00
+      1 z          0.951400      0.974918     0.023518    Fractional   2.47
+      2 x          0.899000      0.950989     0.051989    Fractional   5.78
+      2 y          0.250000      0.250000     0.000000    Fractional   0.00
+      2 z          0.601000      0.563476     0.037524    Fractional   6.24
+      3 x          0.801000      0.782828     0.018172    Fractional   2.27
+      3 y          0.250000      0.250000     0.000000    Fractional   0.00
+      3 z          0.285000      0.214867     0.070133    Fractional  24.61
+      4 x          0.948300      0.962140     0.013840    Fractional   1.46
+      4 y          0.250000      0.250000     0.000000    Fractional   0.00
+      4 z          0.804000      0.778890     0.025110    Fractional   3.12
+--------------------------------------------------------------------------------
+
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+    1 Fe    x       1.3976      0.0000      0.6636
+            y       0.0447      1.0081      0.2584
+            z       0.0550      0.0000      1.6908
+-------------------------------------------------------------------------------
+    2 H     x       1.1547     -0.0000     -0.4186
+            y      -0.0543      0.3507      0.0445
+            z      -0.1303     -0.0000     -0.0365
+-------------------------------------------------------------------------------
+    3 O     x      -0.6079      0.0000     -0.2099
+            y       0.0807     -0.7395     -0.3876
+            z      -0.1741      0.0000     -0.3296
+-------------------------------------------------------------------------------
+    4 O     x      -2.0567     -0.0000     -0.1927
+            y      -0.0712     -0.6194      0.0631
+            z       0.5077     -0.0000     -0.6056
+-------------------------------------------------------------------------------
+
+
+
+
+  Elastic Constant Matrix: (Units=GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    243.2989  101.3510  118.9523   -0.0000   -0.0000   -0.0000
+       2    101.3510  277.8248   92.2225   -0.0000   -0.0000   -0.0000
+       3    118.9523   92.2225  192.9062   -0.0000   -0.0000    0.0000
+       4     -0.0000   -0.0000   -0.0000   58.2590    0.0000   -0.0000
+       5     -0.0000   -0.0000   -0.0000    0.0000   67.5089    0.0000
+       6     -0.0000   -0.0000    0.0000   -0.0000    0.0000   45.8501
+-------------------------------------------------------------------------------
+
+
+  Elastic Compliance Matrix: (Units=1/GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    0.006193 -0.001179 -0.003255  0.000000  0.000000  0.000000
+       2   -0.001179  0.004503 -0.001426  0.000000  0.000000  0.000000
+       3   -0.003255 -0.001426  0.007873  0.000000  0.000000 -0.000000
+       4    0.000000  0.000000  0.000000  0.017165 -0.000000  0.000000
+       5    0.000000  0.000000 -0.000000 -0.000000  0.014813 -0.000000
+       6    0.000000  0.000000 -0.000000  0.000000 -0.000000  0.021810
+-------------------------------------------------------------------------------
+
+  Mechanical properties :
+
+-------------------------------------------------------------------------------
+  Convention :                    Reuss         Voigt         Hill
+-------------------------------------------------------------------------------
+  Bulk  Modulus (GPa)     =     146.00824     148.78686     147.39755
+  Shear Modulus (GPa)     =      57.89868      61.09054      59.49461
+-------------------------------------------------------------------------------
+  Velocity S-wave (km/s)  =       3.67634       3.77631       3.72666
+  Velocity P-wave (km/s)  =       7.21829       7.33115       7.27494
+-------------------------------------------------------------------------------
+  Compressibility (1/GPa) =    0.00684893
+-------------------------------------------------------------------------------
+  Stress axis :                     x             y             z
+-------------------------------------------------------------------------------
+  Youngs Moduli (GPa)     =     161.48307     222.09266     127.02064
+-------------------------------------------------------------------------------
+  Poissons Ratio (x)      =                     0.26175       0.41347
+  Poissons Ratio (y)      =       0.19032                     0.18111
+  Poissons Ratio (z)      =       0.52565       0.31667
+-------------------------------------------------------------------------------
+
+
+
+  Time to end of optimisation =       6.6980 seconds
+
+
+
+  Final charges from ReaxFF :
+
+--------------------------------------------------------------------------------
+    Atom no.            Atomic No.             Charge
+--------------------------------------------------------------------------------
+         1                  26                 1.0081376
+         2                  26                 1.0081376
+         3                  26                 1.0081376
+         4                  26                 1.0081376
+         5                   1                 0.3507448
+         6                   1                 0.3507448
+         7                   1                 0.3507448
+         8                   1                 0.3507448
+         9                   8                -0.7394978
+        10                   8                -0.7394978
+        11                   8                -0.7394978
+        12                   8                -0.7394978
+        13                   8                -0.6193846
+        14                   8                -0.6193846
+        15                   8                -0.6193846
+        16                   8                -0.6193846
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  Output for configuration   3 : wustite                                      *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =          -9.43194653 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy : 
+    Primitive unit cell      =          -9.43194653 eV    
+    Non-primitive unit cell  =         -18.86389306 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy (in kJmol-1): 
+    Primitive unit cell      =            -910.0387 kJ/(mole unit cells)
+    Non-primitive unit cell  =           -1820.0773 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+
+  Number of variables =        4
+
+  Maximum number of calculations  =          1000
+  Maximum Hessian update interval =            10
+  Maximum step size               =   1.000000000
+  Maximum parameter tolerance     =   0.000010000
+  Maximum function  tolerance     =   0.000010000
+  Maximum gradient  tolerance     =   0.001000000
+  Maximum gradient  component     =   0.010000000
+
+  Symmetry constrained optimisation
+
+  Cell parameters to be optimised using strains
+
+  Newton-Raphson optimiser to be used
+
+  BFGS hessian update to be used
+
+  Lower half triangular hessian to be used
+
+  Start of bulk optimisation :
+
+  Cycle:      0 Energy:        -9.431947  Gnorm:      1.663154  CPU:    6.772
+  ** Hessian calculated **
+  Cycle:      1 Energy:        -9.836285  Gnorm:      0.027267  CPU:    6.774
+  Cycle:      2 Energy:        -9.836584  Gnorm:      0.001288  CPU:    6.776
+
+
+  **** Optimisation achieved ****
+
+
+  Final energy =      -9.83658446 eV      
+  Final Gnorm  =       0.00001736
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  ReaxFF force field         =          -9.83658446 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+  Monopole - monopole (recip)=           0.00000000 eV    
+  Monopole - monopole (total)=           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy : 
+    Primitive unit cell      =          -9.83658446 eV    
+    Non-primitive unit cell  =         -19.67316891 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy (in kJmol-1): 
+    Primitive unit cell      =            -949.0800 kJ/(mole unit cells)
+    Non-primitive unit cell  =           -1898.1601 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Final asymmetric unit coordinates :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y           z         Radius
+        Label       (Frac)      (Frac)      (Frac)       (Angs) 
+--------------------------------------------------------------------------------
+     1  Fe    c     0.000000    0.000000    0.000000    0.000000
+     2  O     c     0.000000    0.500000    0.500000    0.000000
+--------------------------------------------------------------------------------
+
+  Final Cartesian lattice vectors (Angstroms) :
+
+        2.465225    1.423308   -0.006889
+       -2.465225    1.423308    0.006889
+       -1.636991    0.000000    2.328839
+
+
+  Final cell parameters and derivatives :
+
+--------------------------------------------------------------------------------
+       a            2.846610 Angstrom     dE/de1(xx)    -0.000022 eV/strain
+       b            2.846610 Angstrom     dE/de2(yy)     0.000029 eV/strain
+       c            2.846617 Angstrom     dE/de3(zz)     0.000059 eV/strain
+       alpha       60.000077 Degrees      dE/de4(yz)     0.000000 eV/strain
+       beta       119.999923 Degrees      dE/de5(xz)    -0.000005 eV/strain
+       gamma      119.999867 Degrees      dE/de6(xy)     0.000000 eV/strain
+--------------------------------------------------------------------------------
+
+  Primitive cell volume =            16.310638 Angs**3
+
+  Density of cell =      7.314958 g/cm**3
+
+  Non-primitive lattice parameters :
+
+  a    =     4.930470  b   =     2.846616  c    =     2.846617
+  alpha=    90.000000  beta=   125.264322  gamma=    90.000000
+
+  Non-primitive cell volume =            32.621276 Angs**3
+
+
+  Final internal derivatives :
+
+--------------------------------------------------------------------------------
+   No.  Atomic          a             b             c           Radius
+        Label          (eV)          (eV)          (eV)        (eV/Angs)
+--------------------------------------------------------------------------------
+      1 Fe    c       0.000000      0.000000      0.000000      0.000000
+      2 O     c       0.000000      0.000000      0.000000      0.000000
+--------------------------------------------------------------------------------
+  Maximum abs         0.000000      0.000000      0.000000      0.000000
+--------------------------------------------------------------------------------
+
+
+  Comparison of initial and final structures : 
+
+--------------------------------------------------------------------------------
+  Parameter   Initial value   Final value   Difference    Units      Percent
+--------------------------------------------------------------------------------
+    Volume        40.179488     32.621276    -7.558213    Angs**3    -18.81
+    a              5.261500      4.930470    -0.331030    Angstroms   -6.29
+    b              3.033400      2.846616    -0.186784    Angstroms   -6.16
+    c              3.060200      2.846617    -0.213583    Angstroms   -6.98
+    alpha         90.000000     90.000000     0.000000    Degrees      0.00
+    beta         124.649000    125.264322     0.615322    Degrees      0.49
+    gamma         90.000000     90.000000     0.000000    Degrees      0.00
+      1 x          0.000000      0.000000     0.000000    Fractional   0.00
+      1 y          0.000000      0.000000     0.000000    Fractional   0.00
+      1 z          0.000000      0.000000     0.000000    Fractional   0.00
+      2 x          0.000000      0.000000     0.000000    Fractional   0.00
+      2 y          0.500000      0.500000     0.000000    Fractional   0.00
+      2 z          0.500000      0.500000     0.000000    Fractional   0.00
+--------------------------------------------------------------------------------
+
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+    1 Fe    x       0.8553      0.0000     -0.0000
+            y       0.0000      0.8553      0.0000
+            z       0.0000     -0.0000      0.8553
+-------------------------------------------------------------------------------
+    2 O     x      -0.8553     -0.0000      0.0000
+            y      -0.0000     -0.8553     -0.0000
+            z      -0.0000      0.0000     -0.8553
+-------------------------------------------------------------------------------
+
+
+
+
+  Elastic Constant Matrix: (Units=GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    328.5920  131.2557  121.7946    0.0000  -13.4582   -0.0000
+       2    131.2557  328.7445  121.6452    0.0000   13.3528    0.0000
+       3    121.7946  121.6452  338.2076    0.0000    0.1052   -0.0000
+       4      0.0000    0.0000    0.0000   89.2471    0.0000   13.3524
+       5    -13.4582   13.3528    0.1052    0.0000   89.3957    0.0000
+       6     -0.0000    0.0000   -0.0000   13.3524    0.0000   98.8570
+-------------------------------------------------------------------------------
+
+
+  Elastic Compliance Matrix: (Units=1/GPa)
+
+-------------------------------------------------------------------------------
+  Indices      1         2         3         4         5         6    
+-------------------------------------------------------------------------------
+       1    0.003931 -0.001242 -0.000969 -0.000000  0.000778  0.000000
+       2   -0.001242  0.003926 -0.000964 -0.000000 -0.000772 -0.000000
+       3   -0.000969 -0.000964  0.003653 -0.000000 -0.000006  0.000000
+       4   -0.000000 -0.000000 -0.000000  0.011436 -0.000000 -0.001545
+       5    0.000778 -0.000772 -0.000006 -0.000000  0.011419 -0.000000
+       6    0.000000 -0.000000  0.000000 -0.001545 -0.000000  0.010324
+-------------------------------------------------------------------------------
+
+  Mechanical properties :
+
+-------------------------------------------------------------------------------
+  Convention :                    Reuss         Voigt         Hill
+-------------------------------------------------------------------------------
+  Bulk  Modulus (GPa)     =     193.88167     193.88167     193.88167
+  Shear Modulus (GPa)     =      94.77033      96.88988      95.83010
+-------------------------------------------------------------------------------
+  Velocity S-wave (km/s)  =       3.59940       3.63943       3.61947
+  Velocity P-wave (km/s)  =       6.61658       6.64571       6.63116
+-------------------------------------------------------------------------------
+  Compressibility (1/GPa) =    0.00515779
+-------------------------------------------------------------------------------
+  Stress axis :                     x             y             z
+-------------------------------------------------------------------------------
+  Youngs Moduli (GPa)     =     254.41595     254.69887     273.78046
+-------------------------------------------------------------------------------
+  Poissons Ratio (x)      =                     0.31645       0.26525
+  Poissons Ratio (y)      =       0.31610                     0.26406
+  Poissons Ratio (z)      =       0.24649       0.24565
+-------------------------------------------------------------------------------
+
+
+
+  Time to end of optimisation =       6.9269 seconds
+
+
+
+  Final charges from ReaxFF :
+
+--------------------------------------------------------------------------------
+    Atom no.            Atomic No.             Charge
+--------------------------------------------------------------------------------
+         1                  26                 0.8552829
+         2                   8                -0.8552829
+--------------------------------------------------------------------------------
+
+
+  Peak dynamic memory used =      85.62 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of reaxFF energy and derivatives                    6.8721
+  Calculation and manipulation of Hessian matrix                  0.0001
+  Electronegativity equalisation                                  0.0448
+  Symmetry generation of equivalent positions                     0.0007
+--------------------------------------------------------------------------------
+  Total CPU time                                                  6.9270
+--------------------------------------------------------------------------------
+
+
+  Job Finished at 18:27.12 30th August     2023                               
+

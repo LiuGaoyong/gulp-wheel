@@ -1,0 +1,352 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                       Curtin Institute for Computation                       *
+*                    School of Molecular and Life Sciences                     *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 6.2.0 * Last modified =  22nd August 2023                          *
+********************************************************************************
+*  fit          - perform fitting run                                          *
+*  conp         - constant pressure calculation                                *
+*  molecule     - molecule option activated, Coulomb subtract within molecule  *
+********************************************************************************
+* Example of fitting to the eigenvectors from an ab initio                     *
+* calculation on water at the M06/6-31+G** level.                              *
+********************************************************************************
+
+
+  Job Started  at 10:07.42 23rd August     2023                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =      1
+
+********************************************************************************
+*  Input for Configuration =   1                                               *
+********************************************************************************
+
+  Formula = OH2                                                         
+
+  Number of irreducible atoms/shells =       3
+
+
+  Total number atoms/shells =       3
+
+  Dimensionality = 0               :  Cluster
+
+
+  Charge on cluster =   0.000000
+
+
+  Initial cluster dipoles : x =      0.000000 e.Angs
+                            y =      0.000000 e.Angs
+                            z =      0.000000 e.Angs
+
+  Temperature of configuration =   0.00     K 
+
+  Symmetry number =      1
+
+  Cartesian coordinates of cluster :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Angs)      (Angs)     (Angs)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 O     c      0.0000      0.0000      0.1160     0.00000    1.000000    
+      2 H     c     -0.7660 *    0.0000 *   -0.4651 *   0.00000    1.000000    
+      3 H     c      0.7660 *    0.0000 *   -0.4641 *   0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+
+  Molecule list generated from bond lengths :
+
+  Total number of molecules =     1
+
+--------------------------------------------------------------------------------
+Molecule No./:  Atoms
+Periodicity  :  
+--------------------------------------------------------------------------------
+     1  0    : O    c     1 H    c     2 H    c     3
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    O        Core        8      16.00   0.000000   0.730  0.000  1.360          
+    H        Core        1       1.01   0.000000   0.370  0.000  1.080          
+--------------------------------------------------------------------------------
+
+
+  Accuracy factor for short range sums = 12.000
+
+  Electrostatics method = Direct Coulomb
+
+  Analytic derivatives to be used
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  Intramolecular potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+H    c O    c Harmonic      Harmonic k2      5.9300000    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0      1.0120000    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+
+  Intramolecular Three-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 / 2 / 3                                                          Min /  Max 
+--------------------------------------------------------------------------------
+O     core    Harmonic      Three-body cnst  33.261360    eV*rad^-2 0.000 1 Bond
+H     core                  Three-body angl  113.24000    degrees   0.000 1 Bond
+H     core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+
+
+  Number of variables   =        4
+  Number of observables =        8
+
+--------------------------------------------------------------------------------
+   Observable no.  Type           Observable    Weight       Reference  Confign 
+--------------------------------------------------------------------------------
+          1        Mode           1609.540000        0.1000    1    1      1
+          2        Mode           3871.900000        0.1000    1    2      1
+          3        Derivative        0.000000        1.0000    2 x         1
+          4        Derivative        0.000000        1.0000    2 y         1
+          5        Derivative        0.000000        1.0000    2 z         1
+          6        Derivative        0.000000        1.0000    3 x         1
+          7        Derivative        0.000000        1.0000    3 y         1
+          8        Derivative        0.000000        1.0000    3 z         1
+--------------------------------------------------------------------------------
+
+  Variables :
+
+--------------------------------------------------------------------------------
+     Parameter No.       Parameter Value          Parameter Type  Species
+--------------------------------------------------------------------------------
+             1                  5.930000          Harmonic k2    
+             2                  1.012000          Harmonic r0    
+             3                 33.261360          Three-body cnst     1
+             4                113.240000          Three-body angl     1
+--------------------------------------------------------------------------------
+
+  Symmetry not used for fitting
+  First derivatives of residuals to be used in fitting
+
+  Maximum no. of cycles   =       5000
+  Maximum step size       =  1000.0000
+  Tolerance on parameters =  0.0000100
+  Tolerance on function   =  0.0000100
+  Tolerance on gradient   =  0.0001000
+  Differencing interval   =  0.0001000
+
+  Dumpfile to be written after every cycle
+
+  Start of fitting :
+
+  Cycle:      0  Sum sqs: 1553526.600129  Gnorm:1533357.363916  CPU:    0.002
+  ** Hessian calculated **
+  Cycle:      1  Sum sqs:  693525.702366  Gnorm:1245689.595677  CPU:    0.003
+  Cycle:      2  Sum sqs:  631627.352732  Gnorm:1805074.964663  CPU:    0.003
+  Cycle:      3  Sum sqs:  517331.742901  Gnorm: 712865.088227  CPU:    0.004
+  Cycle:      4  Sum sqs:  497753.964019  Gnorm: 777337.963682  CPU:    0.004
+  Cycle:      5  Sum sqs:  442691.301143  Gnorm: 827040.548962  CPU:    0.005
+  Cycle:      6  Sum sqs:  264247.051000  Gnorm: 467133.619479  CPU:    0.005
+  Cycle:      7  Sum sqs:  162043.310587  Gnorm:2511313.448233  CPU:    0.006
+  Cycle:      8  Sum sqs:   24764.879653  Gnorm: 252640.866868  CPU:    0.006
+  Cycle:      9  Sum sqs:   20987.086422  Gnorm: 360988.645345  CPU:    0.007
+  Cycle:     10  Sum sqs:   13256.889630  Gnorm:  38812.723188  CPU:    0.007
+  Cycle:     11  Sum sqs:   13141.881308  Gnorm:  50541.748302  CPU:    0.008
+  Cycle:     12  Sum sqs:   11522.409826  Gnorm:  45983.998680  CPU:    0.008
+  Cycle:     13  Sum sqs:    7237.316567  Gnorm: 154015.225962  CPU:    0.009
+  Cycle:     14  Sum sqs:    2531.894304  Gnorm:  41730.589570  CPU:    0.009
+  Cycle:     15  Sum sqs:    2314.282016  Gnorm:  64131.251610  CPU:    0.010
+  Cycle:     16  Sum sqs:    1691.302925  Gnorm:  43038.293703  CPU:    0.010
+  Cycle:     17  Sum sqs:    1269.726385  Gnorm:   3852.243975  CPU:    0.011
+  Cycle:     18  Sum sqs:    1040.007858  Gnorm:  27150.316284  CPU:    0.011
+  Cycle:     19  Sum sqs:     907.584006  Gnorm:  27226.013179  CPU:    0.011
+  Cycle:     20  Sum sqs:     765.647249  Gnorm:   8348.041189  CPU:    0.012
+  ** Hessian calculated **
+  Cycle:     21  Sum sqs:     736.079765  Gnorm:   3099.278671  CPU:    0.013
+  Cycle:     22  Sum sqs:     733.554474  Gnorm:   3076.432396  CPU:    0.013
+  Cycle:     23  Sum sqs:     656.043848  Gnorm:   8687.544774  CPU:    0.014
+  Cycle:     24  Sum sqs:     616.933082  Gnorm:  18607.547868  CPU:    0.014
+  Cycle:     25  Sum sqs:     458.214243  Gnorm:  20853.017909  CPU:    0.014
+  Cycle:     26  Sum sqs:     336.324988  Gnorm:  15491.134969  CPU:    0.015
+  Cycle:     27  Sum sqs:     206.943248  Gnorm:  10669.173422  CPU:    0.015
+  Cycle:     28  Sum sqs:     174.107358  Gnorm:  26053.778971  CPU:    0.016
+  Cycle:     29  Sum sqs:      56.807025  Gnorm:   1131.937626  CPU:    0.016
+  Cycle:     30  Sum sqs:      23.322226  Gnorm:   5623.670747  CPU:    0.017
+  Cycle:     31  Sum sqs:      20.865328  Gnorm:   1594.812412  CPU:    0.017
+  Cycle:     32  Sum sqs:      18.669928  Gnorm:   1113.936458  CPU:    0.018
+  Cycle:     33  Sum sqs:      18.512228  Gnorm:    238.625011  CPU:    0.018
+  Cycle:     34  Sum sqs:      18.495770  Gnorm:    200.290311  CPU:    0.019
+  Cycle:     35  Sum sqs:      15.468872  Gnorm:   6175.677512  CPU:    0.019
+  Cycle:     36  Sum sqs:       4.297637  Gnorm:   3402.382436  CPU:    0.020
+  Cycle:     37  Sum sqs:       1.997034  Gnorm:   5691.114929  CPU:    0.020
+  Cycle:     38  Sum sqs:       1.023743  Gnorm:   1015.843038  CPU:    0.021
+  Cycle:     39  Sum sqs:       0.497776  Gnorm:    869.627010  CPU:    0.021
+  Cycle:     40  Sum sqs:       0.024872  Gnorm:    276.482470  CPU:    0.022
+  ** Hessian calculated **
+  Cycle:     41  Sum sqs:       0.009797  Gnorm:      7.067327  CPU:    0.023
+  Cycle:     42  Sum sqs:       0.000814  Gnorm:     45.644120  CPU:    0.023
+  Cycle:     43  Sum sqs:       0.000727  Gnorm:      2.054435  CPU:    0.024
+  Cycle:     44  Sum sqs:       0.000726  Gnorm:      2.319488  CPU:    0.024
+  Cycle:     45  Sum sqs:       0.000571  Gnorm:     13.631026  CPU:    0.025
+  Cycle:     46  Sum sqs:       0.000516  Gnorm:      0.455487  CPU:    0.025
+
+
+  **** Fit completed successfully ****
+
+
+  Final sum of squares =             0.000516
+
+  Final gradient norm  =             0.455487
+
+  Final values of parameters :
+
+--------------------------------------------------------------------------------
+ Parameter No.    Parameter        Parameter      Parameter Type  Species
+                  Original         Final                                 
+--------------------------------------------------------------------------------
+         1              5.930000        53.193000 Harmonic k2    
+         2              1.012000         0.961133 Harmonic r0    
+         3             33.261360         4.130812 Three-body cnst     1
+         4            113.240000       105.675873 Three-body angl     1
+--------------------------------------------------------------------------------
+
+
+  Final values of numerical parameter gradients :
+
+--------------------------------------------------------------------------------
+     Parameter No.       Parameter Gradient      Parameter Type  Species
+--------------------------------------------------------------------------------
+             1                  0.021848          Harmonic k2    
+             2                 -0.278347          Harmonic r0    
+             3                  0.359845          Three-body cnst     1
+             4                 -0.005080          Three-body angl     1
+--------------------------------------------------------------------------------
+
+
+  Final values of residuals :
+
+--------------------------------------------------------------------------------
+   Observable no.  Type            Observable   Calculated    Residual  Error(%)
+--------------------------------------------------------------------------------
+          1        Mode            1609.54000   1609.54041      0.00000    0.000
+          2        Mode            3871.90000   3871.90050      0.00000    0.000
+          3        Derivative         0.00000     -0.01264      0.00016
+          4        Derivative         0.00000      0.00000      0.00000
+          5        Derivative         0.00000     -0.00951      0.00009
+          6        Derivative         0.00000     -0.01297      0.00017
+          7        Derivative         0.00000      0.00000      0.00000
+          8        Derivative         0.00000      0.00990      0.00010
+--------------------------------------------------------------------------------
+
+  Comparison of initial and final observables :
+
+--------------------------------------------------------------------------------
+   Observable no.  Type            Observable   Initial       Final             
+--------------------------------------------------------------------------------
+          1        Mode 0.9796     1609.54000   4559.06217   1609.54041
+          2        Mode 0.9842     3871.90000   1257.59601   3871.90050
+          3        Derivative         0.00000      2.99493     -0.01264
+          4        Derivative         0.00000      0.00000      0.00000
+          5        Derivative         0.00000     -3.45160     -0.00951
+          6        Derivative         0.00000     -2.99666     -0.01297
+          7        Derivative         0.00000      0.00000      0.00000
+          8        Derivative         0.00000     -3.45421      0.00990
+--------------------------------------------------------------------------------
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  Intramolecular potentials :
+
+--------------------------------------------------------------------------------
+Atom  Types   Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1     2                                                            Min /  Max 
+--------------------------------------------------------------------------------
+H    c O    c Harmonic      Harmonic k2      53.193000    eV*Ang^-2 0.000 1 Bond
+                            Harmonic r0     0.96113302    Ang       
+                            Harmonic k3      0.0000000    eV*Ang^-3 
+                            Harmonic k4      0.0000000    eV*Ang^-4 
+--------------------------------------------------------------------------------
+
+  Intramolecular Three-body potentials :
+
+--------------------------------------------------------------------------------
+  Atoms       Potential      Parameter       Value         Units   Cutoffs(Ang)
+  1 / 2 / 3                                                          Min /  Max 
+--------------------------------------------------------------------------------
+O     core    Harmonic      Three-body cnst  4.1308120    eV*rad^-2 0.000 1 Bond
+H     core                  Three-body angl  105.67587    degrees   0.000 1 Bond
+H     core                  Three-body k4    0.0000000    eV*rad^-4 0.000 1 Bond
+                            Three-body k3    0.0000000    eV*rad^-3 
+--------------------------------------------------------------------------------
+
+
+
+  Total time to end of fitting =       0.0253 seconds
+
+********************************************************************************
+*  Output for configuration   1                                                *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000485 eV    
+  Three-body potentials      =           0.00000000 eV    
+  Monopole - monopole (real) =           0.00000000 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           0.00000485 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =               0.0005 kJ/mol
+--------------------------------------------------------------------------------
+
+  Peak dynamic memory used =       1.79 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of real space energy and derivatives                0.0014
+  Calculation of three-body energy and derivatives                0.0016
+  Calculation of molecules and connectivity                       0.0012
+  Calculation of phonons                                          0.0069
+  Calculation of matrix diagonalisation                           0.0033
+  Sum of squares for fitting                                      0.0046
+  Global summation overhead                                       0.0002
+--------------------------------------------------------------------------------
+  Total CPU time                                                  0.0254
+--------------------------------------------------------------------------------
+
+
+  Dump file written as example48.res
+
+
+  Job Finished at 10:07.42 23rd August     2023                               
+

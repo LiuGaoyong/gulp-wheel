@@ -1,0 +1,114 @@
+EnergyForceEngine:
+------------------
+
+This utility is to provide a simple mechanism to use GULP as an energy/force engine
+that can be called from other pieces of code. Below are the steps required to use
+this approach:
+
+1) Build GULP as a library:
+
+In the main Src directory of GULP set the task to be a library build
+
+./mkgulp -t lib
+
+This will create a library called libgulp.a in the same directory as the object code 
+and module files. These are stored in directories below Src as they depend on the 
+compile options specified (e.g. compiler, debugging, parallel or serial, etc)
+
+2) Include the interface module in your code:
+
+The following line will do this in Fortran
+
+  use m_gulp_interface
+
+You will also need to ensure that the quantities being passed to GULP have the correct datatypes.
+An easy way to do this is to import the datatypes module from GULP
+
+  use datatypes
+
+This will provide the datatypes "dp" for double precision real values and "i4" for integers. 
+Alternatively you can manually ensure that the datatypes module in GULP and your code use the
+same definitions for the quantities being passed. 
+
+3) Call the subroutine to initialise GULP:
+
+Before GULP can be called for energies and gradients, the system must be initialised using
+
+  call init_gulp(lgulpoutput,ndim,natoms,cell,atomicsymbols,xyz,charges,keywords,libraryfile)
+
+Here the arguments are:
+
+lgulpoutput          : logical      : If true then GULP will produce output; if false then the output will be suppressed.
+ndim                 : integer i4   : Indicates the number of periodic directions between 0 and 3
+                     :              : 0 => cluster
+                     :              : 1 => polymer (i.e. periodic in x direction)
+                     :              : 2 => slab    (i.e. periodic in x and y directions)
+                     :              : 3 => solid   (i.e. periodic in all directions)
+natoms               : integer i4   : The number of atoms in the system
+cell(3:ndim)         : real    dp   : The ndim Cartesian lattice vectors (in Angstroms)
+atomicsymbols(natoms): character    : The atom types in GULP format (i.e. element symbol, followed optionally by a number)
+xyz(3:natoms)        : real    dp   : The Cartesian coordinates of atoms (in Angstroms)
+charges(natoms)      : real    dp   : The charges of the atoms (in a.u.) unless set by the force field library file
+keywords             : character    : A string that contains the keywords required by GULP (if any) NB: This can just be a blank string
+libraryfile          : character    : A string that contains the name of the library file containing the force field (if any) NB: This can just be a blank string
+
+4) Call GULP to return the energy and gradients:
+
+Once GULP is initialised then a call can be made to compute the energy and optionally gradients
+
+  call gulp_energy(cell,xyz,charges,energy,gradients,strainderivatives,lgradients,ierror)
+
+Here the arguments are:
+
+ierror               : integer i4   : If the value is 0 then the calculation was successful. 1 => GULP wasn't initialised!
+energy               : real    dp   : The energy of the system (in eV)
+charges(natoms)      : real    dp   : On return this will contain the charges (if a variable charge model is being used then these are the latest charges)
+lgradients           : logical      : If true then GULP will compute the first derivatives of the energy 
+gradients(3:natoms)  : real    dp   : The Cartesian first derivatives of the energy with respect to atom coordinates (in eV/Angstroms)
+strainderivatives(6) : real    dp   : The first derivatives of the energy with respect to Voight strains (in eV). The return values depend on ndim:
+                     :              : 0 => no strain derivatives
+                     :              : 1 => 1 strain derivative for xx strain
+                     :              : 2 => 3 strain derivatives for xx, yy, xy strains (in this order)
+                     :              : 3 => 6 strain derivatives for xx, yy, zz, yz, xz, xy strains (in this order)
+
+Note, this subroutine can be called as many times as required with different sets of coordinates and cell vectors.
+
+5) Compile your code against the GULP modules:
+
+You will need to include the -I option to point to the directory with the relevant modules for the interface
+
+gfortran -c -I../../Src/Darwin main.F90
+
+The above example is for compiling the example calling program with gfortran in this directory where GULP was compiled on a Mac (os=Darwin)
+
+6) Link your code against the GULP libraries:
+
+You will need to specify the relevant library names with their path (or use the -L option)
+
+gfortran -o main main.o ../../Src/Darwin/libgulp.a ../pGFNFF/Src/libpGFNFF.a
+
+Again, the above example is for the example calling program with gfortran on a Mac. 
+Note, that GULP links against the pGFNFF library and so this must also be included here. 
+
+If running the example program, main, then just type "./main". A GULP input file that runs the same thing as the example is also
+provided (nacl.gin) along with the library used by both this and the example (nacl.lib).
+
+7) Running in parallel (for advanced users!):
+
+Above we have assumed that you are running in serial to keep things simple. For those wishing to call GULP
+in an MPI environment then there are a few modifications to the above process.
+
+  a) Obviously you need to compile GULP with the -m flag to build a parallel library
+  b) The library and other files for linking will be in a directory with "_MPI" appended to the operating system
+  c) Before calling either of the other interface routines it is necessary to "call init_gulp_mpi()" where the only argument is
+     the MPI communicator for the calling process (usually MPI_comm_world, for example).
+  d) When compiling it's necessary to use the same mpif90 as chosen for the compilation of GULP.
+     mpif90 -c -I../../Src/Darwin_MPI main_mpi.F90 
+     NB: The alternative parallel example code, main_mpi.F90, is now also used.
+  e) When linking it is now necessary to include Scalapack (plus blacs, pblas, etc). For example; 
+     mpif90 -o main_mpi main_mpi.o ../../Src/Darwin_MPI/libgulp.a ../pGFNFF/Src/libpGFNFF.a -L/opt/homebrew/lib -lscalapack
+  f) To execute the example now requires mpirun;
+     mpirun -np 2 ./main_mpi
+
+
+Julian Gale, Curtin University, December 2023

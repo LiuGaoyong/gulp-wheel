@@ -1,0 +1,14 @@
+opti conp prop phon noden comp 
+
+cell
+4.913000 4.913000 5.405200 90.000000 90.000000 120.000000 
+
+fractional
+Si  core 0.470100 0.000000 0.333333 
+O   core 0.413600 0.267600 0.214100 
+
+spacegroup
+152
+
+library ../Libraries/tersoff_sio2
+

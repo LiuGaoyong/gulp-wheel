@@ -1,0 +1,8 @@
+opti conp gfnff phon noden compare
+svectors
+ 2.461000  0.000000
+-1.230500  2.131289
+cartesian
+C    core     2.461000   -0.000000    3.354000
+C    core     1.230500    0.710430    3.354000
+gfnff_kspace 0.01

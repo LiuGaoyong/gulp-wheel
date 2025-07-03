@@ -1,0 +1,22 @@
+montecarlo noflags dist
+cutd 4.1
+scell
+4.0 4.0 120 
+sfrac
+Si1 core 0.0 0.0 0.0
+Si1 core 0.5 0.0 0.0
+Si1 core 0.0 0.5 0.0
+Si1 core 0.5 0.5 0.0
+temperature 300
+j2
+Si1 core Si1 core -1.0 2.2
+Si1 core Si2 core -1.0 2.2
+Si2 core Si2 core -1.0 2.2
+element
+spin Si1 core  0.5
+spin Si2 core -0.5
+end
+mcspecies 1.0 Si1 Si2
+mcmove 0.0
+mctrial 100
+dump example78.res

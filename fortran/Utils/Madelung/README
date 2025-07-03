@@ -1,0 +1,55 @@
+Madelung is a simple code to compute the correction of a net charged defect
+in a solid. This is an extension of the method of Leslie and Gillan to 
+systems with any cell shape and an anisotropic dielectric constant.
+
+Julian Gale, Curtin University, April 2021
+
+Installation:
+-------------
+
+There are only 2 routines and so they can be compiled using any Fortran compiler:
+
+gfortran -o madelung madelung.f90 matinv.f90
+
+Execution:
+----------
+
+./madelung < input
+
+
+Input file format:
+------------------
+
+Only 3 things are needed for the input:
+1) The cell vectors in Angstroms
+2) The dielectric constant tensor in the same orientation as the cell
+   - a unit matrix can be supplied if no dielectric constant is required
+3) The charge of the defect (NB: sign doesn't matter since the energy depends on Q^2)
+
+Example of the input for Al2O3 in a 3x3x1 hexagonal supercell when computing
+an Al vacancy:
+
+vectors   
+  14.460163    0.000000    0.000000
+  -7.230082   12.522869    0.000000
+   0.000000    0.000000   13.011658
+dielectric
+ 11.29307   0.00000   0.00000
+  0.00000  11.29307   0.00000
+  0.00000   0.00000  16.36466
+3.0       ! Charge
+
+Output:
+-------
+
+Although the components of the energy are output, all that is really needed is the
+final non-blank line:
+
+ Energy correction   =     1.072116 eV
+
+This is the energy that has to be added to the charged-supercell defect energy from
+GULP to correct the PBC result to the isolated defect one. 
+
+NB: This only corrects the dominant Coulomb charge-charge term. For small cells the
+higher multipoles may also require correction. Similarly the elastic interaction is
+not corrected for either, though this should often be small for a large cell.

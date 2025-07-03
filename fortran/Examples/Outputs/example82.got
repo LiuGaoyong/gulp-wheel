@@ -1,0 +1,358 @@
+********************************************************************************
+*                       GENERAL UTILITY LATTICE PROGRAM                        *
+*                                 Julian Gale                                  *
+*                       Curtin Institute for Computation                       *
+*                    School of Molecular and Life Sciences                     *
+*                    Curtin University, Western Australia                      *
+********************************************************************************
+* Version = 6.2.0 * Last modified =  22nd August 2023                          *
+********************************************************************************
+*  optimise     - perform optimisation run                                     *
+*  conp         - constant pressure calculation                                *
+*  gfnff        - use the GFNFF of Spicher and Grimme                          *
+*  gwolf        - apply a Wolf sum to the topological charges in GFNFF         *
+*  property     - calculate properties for final geometry                      *
+*  phonon       - calculate phonons for final geometry                         *
+*  lower_symtry - reduce symmetry according to imaginary phonon modes          *
+*  optlower     - optimise after lowering symmetry due to imaginary modes      *
+*  nosymmetry   - turn off symmetry after initial structure generation         *
+*  nomodcoord   - do not mod input coordinates                                 *
+*  rfo          - optimisation step to be determined by RFO method             *
+********************************************************************************
+
+  Job Started  at 10:13.43 23rd August     2023                               
+
+  Number of CPUs =     1
+
+
+  Total number of configurations input =      1
+
+********************************************************************************
+*  Input for Configuration =   1                                               *
+********************************************************************************
+
+  Formula = S4Hf2                                                       
+
+  Number of irreducible atoms/shells =       6
+
+
+  Total number atoms/shells =       6
+
+  Dimensionality = 2               :  Surface
+
+
+
+  Surface Cartesian vectors (Angstroms) :
+
+        3.686793    0.000000    0.000000
+       -1.843397    3.192857    0.000000
+
+  Surface cell parameters (Angstroms/Degrees):
+
+  a =       3.6868    alpha = 120.0000
+  b =       3.6868
+
+  Initial surface area   =     11.771403 Angs**2
+
+  Initial surface dipole =      0.000000 e.Angs
+
+  Temperature of configuration =   0.00     K 
+
+  Mixed fractional/Cartesian coordinates of surface :
+
+--------------------------------------------------------------------------------
+   No.  Atomic       x           y          z         Charge      Occupancy
+        Label      (Frac)      (Frac)     (Angs)        (e)         (Frac)  
+--------------------------------------------------------------------------------
+      1 S     c    0.666667 *  0.333333 *    8.3195 *   0.00000    1.000000    
+      2 Hf    c    0.000000 * -0.000000 *    7.0757 *   0.00000    1.000000    
+      3 S     c    0.333333    0.666667      5.8370     0.00000    1.000000    
+      4 S     c    0.333333 *  0.666667 *    2.4049 *   0.00000    1.000000    
+      5 Hf    c    0.000000 * -0.000000 *    1.1663 *   0.00000    1.000000    
+      6 S     c    0.666667 *  0.333333 *   -0.0775 *   0.00000    1.000000    
+--------------------------------------------------------------------------------
+
+
+  Brillouin zone sampling points :
+
+--------------------------------------------------------------------------------
+  Point number          x          y          z            Weight
+--------------------------------------------------------------------------------
+        1           0.000000   0.000000   0.000000     1.00000000
+--------------------------------------------------------------------------------
+
+
+********************************************************************************
+*  General input information                                                   *
+********************************************************************************
+
+  Species output for all configurations : 
+
+--------------------------------------------------------------------------------
+  Species    Type    Atomic    Atomic    Charge       Radii (Angs)     Library
+                     Number     Mass       (e)     Cova   Ionic  VDW   Symbol
+--------------------------------------------------------------------------------
+    S        Core       16      32.07   0.000000   1.020  0.000  1.700          
+    Hf       Core       72     178.49   0.000000   1.570  0.000  2.340          
+--------------------------------------------------------------------------------
+
+
+  Lattice summation method               =    Ewald          (3-D)
+                                         =    Parry          (2-D)
+                                         =    Saunders et al (1-D)
+  Accuracy factor for lattice sums       =   12.000
+
+
+  Analytic derivatives to be used
+
+  Time limit = Infinity
+
+  Maximum range for interatomic potentials =    100000.000000 Angstroms
+
+  pGFNFF forcefield to be used
+
+  pGFNFF parameter charges will use new PBC-consistent topology 
+  pGFNFF maximum number of shells for topology - loop 0   =    2
+  pGFNFF maximum number of shells for topology - loop > 0 =    4
+  pGFNFF fragments to be set based on original neighbour list
+  pGFNFF topological large distance = 10**12 
+  pGFNFF topological distances scaled by =  1.17500
+  pGFNFF topological distance  cutoff    = 12.00000 a.u.
+  pGFNFF topological charges to be computed with a Wolf sum with eta =  0.20000
+  pGFNFF minimum allowed charge in topology set =      -2.0000
+  pGFNFF dispersion-coordination number tolerance =    10.0000
+  pGFNFF high coordination numbers will NOT be trapped
+  pGFNFF pi biradicals modified based on charge of atoms
+  pGFNFF accuracy       =     0.100000
+  pGFNFF accuracy_disp  =     0.100000
+  pGFNFF accuracy_rep   =     0.100000
+  pGFNFF accuracy_cn    =     0.100000
+  pGFNFF accuracy_hb1   =     0.100000
+  pGFNFF accuracy_hb2   =     0.100000
+  pGFNFF taper          =     0.950000
+  pGFNFF temperature 1  =  4000.000000 K
+  pGFNFF temperature 2  =   300.000000 K
+  pGFNFF kspace         =     0.040000 1/Ang
+  pGFNFF ATM dispersion =   damped 
+
+********************************************************************************
+*  Output for configuration   1                                                *
+********************************************************************************
+
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  GFNFF force field          =         -19.19091279 eV    
+  Monopole - monopole (real) =          -0.39280712 eV    
+  Monopole - monopole (recip)=          -2.03975186 eV    
+  Monopole - monopole (total)=          -2.43255898 eV    
+  GFNFF Coulomb correction   =           0.00001476 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =         -21.62345701 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           -2086.3331 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+
+  Number of variables =       18
+
+  Maximum number of calculations  =          1000
+  Maximum Hessian update interval =            10
+  Maximum step size               =   1.000000000
+  Maximum parameter tolerance     =   0.000010000
+  Maximum function  tolerance     =   0.000010000
+  Maximum gradient  tolerance     =   0.001000000
+  Maximum gradient  component     =   0.010000000
+
+  Cell parameters to be optimised using strains
+
+  RFO method to be used
+
+  DFP hessian update to be used
+
+  Lower half triangular hessian to be used
+
+  Dumpfile to be written after every cycle
+
+  Start of surface optimisation :
+
+  Cycle:      0 Energy:       -21.623457  Gnorm:      0.013802  CPU:    0.005
+  ** Hessian has wrong structure
+  ** Imaginary eigenvectors =   2
+  ** Hessian has wrong structure
+  ** Imaginary eigenvectors =   1
+  Cycle:      1 Energy:       -21.655379  Gnorm:      0.005868  CPU:    0.009
+  ** Hessian has wrong structure
+  ** Imaginary eigenvectors =   1
+  ** Hessian has required structure
+  Cycle:      2 Energy:       -21.660804  Gnorm:      0.000282  CPU:    0.013
+  ** Hessian has required structure
+
+
+  **** Optimisation achieved ****
+
+
+  Final energy =     -21.66080503 eV      
+  Final Gnorm  =       0.00000885
+
+  Components of energy : 
+
+--------------------------------------------------------------------------------
+  Interatomic potentials     =           0.00000000 eV    
+  GFNFF force field          =         -19.21262140 eV    
+  Monopole - monopole (real) =          -0.39750042 eV    
+  Monopole - monopole (recip)=          -2.05069790 eV    
+  Monopole - monopole (total)=          -2.44819832 eV    
+  GFNFF Coulomb correction   =           0.00001469 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =         -21.66080503 eV    
+--------------------------------------------------------------------------------
+  Total lattice energy       =           -2089.9366 kJ/(mole unit cells)
+--------------------------------------------------------------------------------
+
+  Final fractional/Cartesian coordinates of atoms :
+
+--------------------------------------------------------------------------------
+   No.  Atomic        x           y          z          Radius
+        Label       (Frac)      (Frac)     (Angs)       (Angs) 
+--------------------------------------------------------------------------------
+     1  S     c     0.666667    0.333333    8.304283    0.000000
+     2  Hf    c     0.000000   -0.000000    7.068539    0.000000
+     3  S     c     0.333333    0.666667    5.837000    0.000000
+     4  S     c     0.666363    1.333197    2.708347    0.000000
+     5  Hf    c     0.333029    0.666530    1.475472    0.000000
+     6  S     c     0.999695    0.999863    0.240029    0.000000
+--------------------------------------------------------------------------------
+
+  Final Cartesian surface vectors (Angstroms) :
+
+        3.695891   -0.000002    0.000000
+       -1.847949    3.200734    0.000000
+
+
+  Final surface cell parameters and derivatives :
+
+--------------------------------------------------------------------------------
+       a            3.695891 Angstrom     dE/de1(xx)    -0.000026 eV/strain
+       b            3.695891 Angstrom     dE/de2(yy)    -0.000118 eV/strain
+       alpha      120.000085 Degrees      dE/de3(xy)    -0.000024 eV/strain
+--------------------------------------------------------------------------------
+
+  Surface cell area =     11.829559 Angs**2
+
+  Final internal/Cartesian derivatives :
+
+--------------------------------------------------------------------------------
+   No.  Atomic          a             b             z           Radius
+        Label          (eV)          (eV)       (eV/Angs)      (eV/Angs)
+--------------------------------------------------------------------------------
+      1 S     c      -0.000005      0.000008      0.000038      0.000000
+      2 Hf    c       0.000008     -0.000005     -0.000042      0.000000
+      3 S     c       0.000000      0.000000      0.000000      0.000000
+      4 S     c      -0.000037      0.000010     -0.000042      0.000000
+      5 Hf    c      -0.000024      0.000007      0.000018      0.000000
+      6 S     c      -0.000051     -0.000010      0.000006      0.000000
+--------------------------------------------------------------------------------
+  Maximum abs         0.000051      0.000010      0.000042      0.000000
+--------------------------------------------------------------------------------
+
+
+  Born effective charge tensors : 
+
+-------------------------------------------------------------------------------
+  Atom             x           y             z
+-------------------------------------------------------------------------------
+    1 S     x      -0.2127      0.0000      0.0000
+            y       0.0000     -0.2127      0.0000
+            z       0.0000      0.0000     -0.2127
+-------------------------------------------------------------------------------
+    2 Hf    x       0.4265      0.0000      0.0000
+            y       0.0000      0.4265      0.0000
+            z       0.0000      0.0000      0.4265
+-------------------------------------------------------------------------------
+    3 S     x      -0.2138      0.0000      0.0000
+            y       0.0000     -0.2138      0.0000
+            z       0.0000      0.0000     -0.2138
+-------------------------------------------------------------------------------
+    4 S     x      -0.2135      0.0000      0.0000
+            y       0.0000     -0.2135      0.0000
+            z       0.0000      0.0000     -0.2135
+-------------------------------------------------------------------------------
+    5 Hf    x       0.4264      0.0000      0.0000
+            y       0.0000      0.4264      0.0000
+            z       0.0000      0.0000      0.4264
+-------------------------------------------------------------------------------
+    6 S     x      -0.2129      0.0000      0.0000
+            y       0.0000     -0.2129      0.0000
+            z       0.0000      0.0000     -0.2129
+-------------------------------------------------------------------------------
+
+
+
+  Phonon Calculation : 
+
+  Number of k points for this configuration =        1
+
+--------------------------------------------------------------------------------
+  K point      1 =   0.000000  0.000000  0.000000  Weight =    1.000
+--------------------------------------------------------------------------------
+
+  Frequencies (cm-1) : 
+
+   -0.01   -0.01   -0.01    8.84    8.85   27.64  264.06  264.06  264.64
+  264.65  287.72  287.78  288.93  294.63  306.42  306.43  306.82  306.82
+
+
+  No imaginary modes present - current symmetry is correct
+
+--------------------------------------------------------------------------------
+  Phonon properties (per mole of unit cells): Temperature =      0.000 K
+--------------------------------------------------------------------------------
+  Zero point energy             =        0.216248 eV
+--------------------------------------------------------------------------------
+
+  Time to end of optimisation =       0.0184 seconds
+
+
+
+  Final charges from pGFNFF :
+
+--------------------------------------------------------------------------------
+    Atom no.            Atomic No.             Charge
+--------------------------------------------------------------------------------
+         1                  16                -0.2126692
+         2                  72                 0.4264819
+         3                  16                -0.2138127
+         4                  16                -0.2135491
+         5                  72                 0.4264170
+         6                  16                -0.2128679
+--------------------------------------------------------------------------------
+
+  Peak dynamic memory used =       2.60 MB 
+
+
+  Timing analysis for GULP :
+
+--------------------------------------------------------------------------------
+  Task / Subroutine                                          Time (Seconds)
+--------------------------------------------------------------------------------
+  Calculation of reciprocal space energy and derivatives          0.0007
+  Calculation of real space energy and derivatives                0.0013
+  Generation of GFNFF parameters                                  0.0014
+  Calculation of GFNFF energy and derivatives                     0.0124
+  Calculation of phonons                                          0.0011
+  Calculation and manipulation of Hessian matrix                  0.0024
+  Electronegativity equalisation                                  0.0020
+  Calculation of variable charge 2nd derivatives                  0.0002
+--------------------------------------------------------------------------------
+  Total CPU time                                                  0.0184
+--------------------------------------------------------------------------------
+
+
+  Dump file written as example82.res
+
+
+  Job Finished at 10:13.43 23rd August     2023                               
+
