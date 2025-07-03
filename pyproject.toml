@@ -14,8 +14,8 @@ classifiers = [
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
-requires-python = ">=3.7"
-dependencies = ['importlib_metadata>=1.4; python_version < "3.8"']
+requires-python = ">=3.8"
+dependencies = []
 
 [project.urls]
 repository = "https://github.com/LiuGaoyong/gulp-wheel.git"
@@ -30,6 +30,12 @@ channels = ["conda-forge"]
 platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
 
 [tool.pixi.dependencies]
-python = ">=3.7"
+fortran-compiler = ">=1.10.0,<2"
+fftw = ">=3.3.10,<4"
+python = ">=3.8"
+
+[tool.pixi.target.linux-64.dependencies]
+elpa = ">=2020.05"
+kim-api = ">=2.4"
 
 [tool.pixi.tasks]
