@@ -69,7 +69,7 @@
 !  11/07 lreaxFFqreal added
 !  12/07 reaxFF 3-body conjugation parameters added
 !  12/07 mdmaxtemp option added
-!  12/07 Logical arrays added to control whether the overcoordination/1-3 
+!  12/07 Logical arrays added to control whether the overcoordination/1-3
 !        corrections are applied to bond orders in ReaxFF
 !   1/08 Monte Carlo arrays modified to create a single pointer for atoms
 !        involved in a trial operation
@@ -94,7 +94,7 @@
 !        and gradient shifts
 !   1/09 VBO_twobody potential added
 !   1/09 Core-shell vector array added
-!   1/09 lreaxFFpboOK added 
+!   1/09 lreaxFFpboOK added
 !   3/09 Value of MPI communicator added to parallel module
 !   3/09 Finite difference flag added
 !   4/09 New order 3 MEAM density components added by increasing maxmeamcomponent to 24 from 21
@@ -125,7 +125,7 @@
 !   9/12 Pacha parameters added from Marc Henry
 !  10/12 Module added for variables associated with trapping sigint
 !  10/12 Support for OpenKIM added
-!  10/12 Lammps file output added 
+!  10/12 Lammps file output added
 !  11/12 Modified Wolf sum of Fennell and Gezelter added
 !  12/12 Q0 value arrays added for electronegativity methods
 !   3/13 Data moved from fortran channels to modules for defect information
@@ -157,7 +157,7 @@
 !   8/15 Thresholds for third order force constants added
 !   8/15 Garofalini form of sw3 added
 !   8/15 New option added to optimise after lower has been performed
-!   9/15 BOccoeff changed 
+!   9/15 BOccoeff changed
 !  12/15 nBOtapertype added
 !   3/16 fitlabel first dimension increased to 28
 !   3/16 Plumed module moved to separate file
@@ -188,7 +188,7 @@
 !   8/18 rpds added
 !   8/18 strain array added to current module
 !   9/18 rpds renamed to dr2ds and d2r2ds2/d2r2dsdx added
-!  10/18 RFO control variables added and stepmaxrfo renamed 
+!  10/18 RFO control variables added and stepmaxrfo renamed
 !  11/18 lowersign added
 !  11/18 Non-radial arrays removed since they are no longer needed
 !  12/18 Shear force added
@@ -215,7 +215,7 @@
 !   3/20 Dielectric constant added
 !   3/20 Molecule internal counters added
 !   4/20 derv3c and d2r2dsdc added for mixed strain-Cartesian derivatives without
-!        the cell correction for fractional conversion 
+!        the cell correction for fractional conversion
 !   4/20 Above change reversed as it is no longer needed
 !   4/20 maxfqat changed to maxfreq since it is no longer just atom based
 !   5/20 molaxes added
@@ -602,7 +602,7 @@
     integer(i4),                               save :: maxbondQ = 1
     character(len=5), dimension(:,:), pointer, save :: symbolbondQ => null()
     integer(i4),                               save :: nbondQ
-    integer(i4),      dimension(:),   pointer, save :: nbondQspec1 => null() 
+    integer(i4),      dimension(:),   pointer, save :: nbondQspec1 => null()
     integer(i4),      dimension(:),   pointer, save :: nbondQspec2 => null()
     integer(i4),      dimension(:),   pointer, save :: nbondQtyp1 => null()
     integer(i4),      dimension(:),   pointer, save :: nbondQtyp2 => null()
@@ -735,9 +735,9 @@
     real(dp),    dimension(:),   pointer, save :: rVBmax => null()          ! Maximum cutoff for valence bond potential
     real(dp),    dimension(:),   pointer, save :: rVBmin => null()          ! Minimum cutoff for valence bond potential
   end module bondvalence
-!   
+!
 !  Bond list for pair of atoms
-!   
+!
   module bondvectors
     use datatypes
     integer(i4),                          save :: maxbondvec = 3
@@ -1005,21 +1005,21 @@
 !
 !  Atomic units to angstroms
 !
-!  Old value for backwards compatability 
+!  Old value for backwards compatability
     real(dp), parameter :: autoangs = 0.529177_dp
 !  Use this value for more accuracy : NIST
 !    real(dp), parameter :: autoangs = 0.52917721092_dp
 !
 !  Atomic units to eV
 !
-!  Old value for backwards compatability 
+!  Old value for backwards compatability
     real(dp), parameter :: autoev = 27.211654_dp
 !  Use this value for more accuracy : NIST
 !    real(dp), parameter :: autoev = 27.21138505_dp
 !
 !  Inverse angstroms to eV
 !
-!  Old value for backwards compatability 
+!  Old value for backwards compatability
     real(dp), save :: inverse_angstroms_to_ev = 14.3997584_dp
 !  Use this value for more accuracy based on NIST values:
 !    real(dp), save :: inverse_angstroms_to_ev = autoev*autoangs
@@ -1052,9 +1052,9 @@
 !  eV -> Kcal
 !
     real(dp), save :: evtokcal = 23.0604_dp
-!   
+!
 !  cm-1 -> rad/s, THz -> rad/s, meV -> rad/s
-!   
+!
     real(dp), save :: cmtorads,thztorad,mevtorad,mevtot !done in initial
 !**************
 !  Constants  *
@@ -1091,7 +1091,7 @@
 !
 !  Hbar - Planck's constant / 2*pi in (Js)
 !
-    real(dp),      save :: hbar_js 
+    real(dp),      save :: hbar_js
 !
 !  Hbar (in A^2 Kg /s) (ers29)
 !
@@ -1206,7 +1206,7 @@
     logical,                          save :: lnumdiag             ! If true, use numerical on-diagonal Hessian matrix elements
     logical,                          save :: lnumerical           ! If true, use numerical second derivatives
     logical,                          save :: loldd2q              ! If true, use old 4th power scaling algoritm for variable charge 2nd derivatives
-    logical,                          save :: loldinten            ! Use old formula to compute vibrational intensities 
+    logical,                          save :: loldinten            ! Use old formula to compute vibrational intensities
     logical,                          save :: lopprt
     logical,                          save :: lopt
     logical,                          save :: lphon                ! Compute phonons if true
@@ -1252,11 +1252,11 @@
     logical,                          save :: lzdipole             ! If true, then correct for the energy of the z dipole moment only
     logical,                          save :: lzsisa               ! Use ZSISA approximation for free energy minimisation
   end module control
-!       
-!  Cosmic/Cosmo solvation model                  
-!       
-  module cosmic                        
-    use datatypes                     
+!
+!  Cosmic/Cosmo solvation model
+!
+  module cosmic
+    use datatypes
     integer(i4),                            save :: maxallnearseg = 1
     integer(i4),                            save :: maxcosmoA = 1         ! Maximum left hand dimension of cosmoA
     integer(i4),                            save :: maxcosmoAu = 1        ! Maximum right hand dimension of cosmoA
@@ -1318,7 +1318,7 @@
     logical,                                save :: ldodeca = .false.
     logical,                                save :: lcosmic
     logical,                                save :: lsegsmooth = .false.
-    real(dp),                               save :: cosmofneps 
+    real(dp),                               save :: cosmofneps
     real(dp),                               save :: cosmorange = 0.0_dp
     real(dp),                               save :: cosmormax = 10.0_dp
     real(dp),                               save :: cosmormaxs = 1.0_dp
@@ -1330,11 +1330,11 @@
     real(dp),                               save :: rsolv
     real(dp),                               save :: totsegweight
   end module cosmic
-!  
+!
 !  Locally used pointer data for Cosmic/Cosmo solvation model
-!     
+!
   module cosmicpwtloc
-    use datatypes                           
+    use datatypes
     integer(i4),                            save :: maxnpwtloc = 1
     integer(i4), dimension(:,:),   pointer, save :: npwtloc => null()
     integer(i4), dimension(:,:,:), pointer, save :: npwtptrloc => null()
@@ -1728,7 +1728,7 @@
     real(dp),    dimension(:,:),       pointer, save :: derv2 => null()              ! Second derivatives - coordinate-coordinate
     real(dp),    dimension(:),         pointer, save :: derv2d=> null()              ! Diagonal of second derivative array
     real(dp),    dimension(:,:),       pointer, save :: dervi=> null()               ! Second derivatives - coordinate-coordinate imaginary part
-    real(dp),    dimension(:,:),       pointer, save :: derv3 => null()              ! Second derivatives - strain-fractional (radial forces/total) 
+    real(dp),    dimension(:,:),       pointer, save :: derv3 => null()              ! Second derivatives - strain-fractional (radial forces/total)
     real(dp),    dimension(:,:),       pointer, save :: diagblock=> null()           ! On-diagonal block of second derivatives
     real(dp),    dimension(:,:),       pointer, save :: dqds=> null()                ! First derivatives of charge w.r.t. strain
     real(dp),    dimension(:,:),       pointer, save :: d2qds2 => null()
@@ -1746,7 +1746,7 @@
     real(dp),    dimension(:,:,:),     pointer, save :: d2qdxyzs => null()
     real(dp),    dimension(:,:,:),     pointer, save :: d2cell => null()             ! Second derivatives decomposed by cell
     real(dp),    dimension(:,:),       pointer, save :: molQdrv=> null()             ! First derivatives - molecule quaternion
-    real(dp),    dimension(:,:),       pointer, save :: molTdrv=> null()             ! First derivatives - molecule translation 
+    real(dp),    dimension(:,:),       pointer, save :: molTdrv=> null()             ! First derivatives - molecule translation
     real(dp),    dimension(:,:,:),     pointer, save :: molQCdrv=> null()            ! Second derivatives - molecule quaternion / Cartesian
     real(dp),    dimension(:,:,:),     pointer, save :: molQCdri=> null()            ! Second derivatives - molecule quaternion / Cartesian (imag)
     real(dp),    dimension(:,:,:),     pointer, save :: molQSdrv=> null()            ! Second derivatives - molecule quaternion / Cartesian
@@ -1755,7 +1755,7 @@
     real(dp),    dimension(:,:,:),     pointer, save :: molTSdrv=> null()            ! Second derivatives - molecule translation / Strain
     real(dp),    dimension(:,:,:,:),   pointer, save :: molQQdrv=> null()            ! Second derivatives - molecule quaternions
     real(dp),    dimension(:,:,:,:),   pointer, save :: molQQdri=> null()            ! Second derivatives - molecule quaternions (imag)
-    real(dp),    dimension(:,:,:,:),   pointer, save :: molQTdrv=> null()            ! Second derivatives - molecule quaternion/translation 
+    real(dp),    dimension(:,:,:,:),   pointer, save :: molQTdrv=> null()            ! Second derivatives - molecule quaternion/translation
     real(dp),    dimension(:,:,:,:),   pointer, save :: molQTdri=> null()            ! Second derivatives - molecule quaternion/translation (imag)
     real(dp),    dimension(:,:,:,:),   pointer, save :: molTTdrv=> null()            ! Second derivatives - molecule translations
     real(dp),    dimension(:,:,:,:),   pointer, save :: molTTdri=> null()            ! Second derivatives - molecule translations (imag)
@@ -1848,10 +1848,10 @@
     use datatypes
     use gulp_lengths
     integer(i4),                                      parameter     :: maxmeamorder = 4       ! Number of MEAM orders : 4 => l = 0 -> 3
-    integer(i4),                                      parameter     :: maxmeamcomponent = 24  ! Used to dimension array for rho - 
+    integer(i4),                                      parameter     :: maxmeamcomponent = 24  ! Used to dimension array for rho -
                                                                                               ! do not change without much thought!
     integer(i4),                                               save :: nlibeamfnspec = 0      ! Number of EAM fn species not in library
-    integer(i4),                                               save :: nlibeamspec = 0        ! Number of EAM species not in library 
+    integer(i4),                                               save :: nlibeamspec = 0        ! Number of EAM species not in library
     integer(i4),                                               save :: neamfnspec = 0         ! Number of EAM fn species
     integer(i4),                                               save :: neamspec = 0           ! Number of EAM species
     character(len=5),             dimension(:),       pointer, save :: symboleamfnspec => null()
@@ -1923,7 +1923,7 @@
       real(dp),    dimension(:,:),   pointer :: sa_drhototij=> null()              ! First derivative of total rho for i-j resulting from screening
       real(dp),    dimension(:,:),   pointer :: sa_drhototik=> null()              ! First derivative of total rho for i-k resulting from screening
       real(dp),    dimension(:,:),   pointer :: sa_drhototjk=> null()              ! First derivative of total rho for j-k resulting from screening
-      real(dp),    dimension(:,:),   pointer :: sa_drhotots => null()              ! First derivative of total rho with respect to strain 
+      real(dp),    dimension(:,:),   pointer :: sa_drhotots => null()              ! First derivative of total rho with respect to strain
     end type screening_atoms
     data meamlatticetype/'fcc    ','bcc    ','nacl   ','hcp    ','dimer  ', &
                          'l12ab3 ','l12a3b ','zns    ','diamond'/
@@ -1996,7 +1996,7 @@
     real(dp),         dimension(:),   pointer, save :: qbond => null()
   end module eembonds
 !
-!  EEM data 
+!  EEM data
 !
   module eemdata
     use datatypes
@@ -2008,8 +2008,8 @@
     integer(i4),      dimension(:,:,:), pointer, save :: nqrangetype => null()       ! Type of qrange (0=unbounded,1=qmin only,2=qmax only,3=qmin and qmax)
     integer(i4),      dimension(:),     pointer, save :: nqrnow => null()            ! Pointer to current q range
     logical,                                     save :: lmultiqrange                ! Flag that indicates whether any nqrange > 1
-    real(dp),         dimension(:,:,:), pointer, save :: qrangemax => null()         ! Upper bound of qrange 
-    real(dp),         dimension(:,:,:), pointer, save :: qrangemin => null()         ! Lower bound of qrange 
+    real(dp),         dimension(:,:,:), pointer, save :: qrangemax => null()         ! Upper bound of qrange
+    real(dp),         dimension(:,:,:), pointer, save :: qrangemin => null()         ! Lower bound of qrange
     real(dp),         dimension(:,:,:), pointer, save :: chirange => null()          ! Chi for each qrange
     real(dp),         dimension(:,:,:), pointer, save :: murange => null()           ! Mu for each qrange
     real(dp),         dimension(:,:,:), pointer, save :: e0range => null()           ! Additive energy term for each qrange
@@ -2103,7 +2103,7 @@
     use datatypes
     integer(i4),                          save :: maxmany  = 1
     integer(i4),                          save :: maxmany2 = 1
-    integer(i4), dimension(:),   pointer, save :: nptrfork => null()  
+    integer(i4), dimension(:),   pointer, save :: nptrfork => null()
     integer(i4), dimension(:),   pointer, save :: nptrforl => null()
     integer(i4), dimension(:),   pointer, save :: nptrmanyk => null()
     real(dp),    dimension(:,:), pointer, save :: d33 => null()
@@ -2171,7 +2171,7 @@
     character(len=maxwordlength), save :: sasfile
     character(len=maxwordlength), save :: shengfile
     character(len=maxwordlength), save :: thbfile
-    character(len=maxwordlength), save :: trjfile 
+    character(len=maxwordlength), save :: trjfile
     character(len=maxwordlength), save :: xrfile
     character(len=maxwordlength), save :: xsffile
     character(len=maxwordlength), save :: xtlfile
@@ -2241,9 +2241,9 @@
     real(dp),                     save :: lammps_rend                            ! End of Lammps table potential range
     real(dp),                     save :: cif_dummylattice                       ! Dummy lattice parameter for non 3-D CIFs
   end module gulp_files
-!              
+!
 !  Free energy workspace
-!             
+!
   module fc_data
     use datatypes
     real(dp),                     save :: rfcinteraction = 0.0_dp                ! Force constant interaction range
@@ -2427,7 +2427,7 @@
     real(dp),                                 save :: gfnff_hb_nb_cut                 ! Hydrogen bonding cutoff
     real(dp),                                 save :: gfnff_hb_short_cut              ! Hydrogen bonding cutoff
     real(dp),                                 save :: gfnff_hb_scale_coh              ! Hydrogen bond scale factor  - COH case
-    real(dp),                                 save :: gfnff_hb_scale_gen              ! Hydrogen bond scale factor 
+    real(dp),                                 save :: gfnff_hb_scale_gen              ! Hydrogen bond scale factor
     real(dp),                                 save :: gfnff_hbthr1                    ! Hydrogen bond threshold 1
     real(dp),                                 save :: gfnff_hbthr2                    ! Hydrogen bond threshold 2
     real(dp),    dimension(:),       pointer, save :: gfnff_hb_ABq => null()          ! Hydrogen bonding charge-scaling parameter
@@ -2610,11 +2610,11 @@
     real(dp),                                            save :: accuracy              ! Controls the precision of the Ewald summation
     real(dp),                                            save :: bfactor               ! Broadening factor used in phonon calculations
     real(dp),                                            save :: Lor_tol               ! Drop tolerance used for Lorentzian in thermal conductivity
-    real(dp),                                            save :: cellmin 
+    real(dp),                                            save :: cellmin
     real(dp),                                            save :: cutb
     real(dp),                                            save :: cutw
-    real(dp),                                            save :: cutoffmax             ! Maximum cutoff of any potential 
-    real(dp),                                            save :: cutoffmaxbo           ! Maximum cutoff of any bond order potential 
+    real(dp),                                            save :: cutoffmax             ! Maximum cutoff of any potential
+    real(dp),                                            save :: cutoffmaxbo           ! Maximum cutoff of any bond order potential
     real(dp),                                            save :: etaw
     real(dp),                                            save :: findiff               ! Finite difference step size
     real(dp),                                            save :: findiffc              ! Finite difference step size for property evaluation - Cartesian
@@ -2634,7 +2634,7 @@
     real(dp),                                            save :: smallself             ! This value is used for distance^2 test for self terms
     real(dp),                                            save :: targetrradmax
     real(dp),                                            save :: tdel
-    real(dp),                                            save :: time0           
+    real(dp),                                            save :: time0
     real(dp),                                            save :: timesofar             ! Time spent executing so far
     real(dp),                                            save :: timmax                ! Maximum time allowed for execution
     real(dp),                                            save :: version               ! GULP version number
@@ -2706,7 +2706,7 @@
     integer(i4),                          save :: maxkpt = 1                    ! Maximum number of K points
     integer(i4), dimension(:),   pointer, save :: nkptcfg => null()             ! Pointer to configuration of K point
     integer(i4), dimension(:),   pointer, save :: norigkpt => null()            ! Number of K points input for each configuration
-    integer(i4), dimension(:,:), pointer, save :: nks    => null()              ! Shrinking factors for the Brillouin zone 
+    integer(i4), dimension(:,:), pointer, save :: nks    => null()              ! Shrinking factors for the Brillouin zone
     integer(i4), dimension(:,:), pointer, save :: nksala => null()              ! Shrinking factors for the Brillouin zone for Alamode
     logical,     dimension(:),   pointer, save :: lkptdispersion => null()      ! If true this K point is part of a dispersion curve
     logical,     dimension(:),   pointer, save :: lksorigin => null()           ! If true then K point grid is generated centred on the origin
@@ -2860,7 +2860,7 @@
     real(dp),                               save :: pstrain
     real(dp),                               save :: pswapsum
     real(dp),                               save :: ptransum
-    real(dp),                               save :: protate 
+    real(dp),                               save :: protate
     real(dp),                               save :: targetmove
     real(dp),                               save :: targetrota
     real(dp),                               save :: targetstrain
@@ -2908,7 +2908,7 @@
 !
   module mdlogic
     use datatypes
-    logical,                                save :: ladiabatic 
+    logical,                                save :: ladiabatic
     logical,                                save :: llist3
     logical,                                save :: llist4
     logical,                                save :: llist6
@@ -3051,8 +3051,8 @@
     integer(i4),                              save :: nconnect
     integer(i4),                              save :: nmol                         ! Number of molecules in full cell
     integer(i4),                              save :: nmolasym                     ! Number of molecules in asymmetric unit
-    integer(i4),                              save :: nlibnobo                     ! Number of bond exclusions in the library 
-    integer(i4),                              save :: nlibbondtype                 ! Number of default bond types in the library 
+    integer(i4),                              save :: nlibnobo                     ! Number of bond exclusions in the library
+    integer(i4),                              save :: nlibbondtype                 ! Number of default bond types in the library
     integer(i4),                              save :: nnobo                        ! Number of bond exclusions
     integer(i4),                              save :: nbondtype                    ! Number of default bond types
     logical,     dimension(:),       pointer, save :: lgcmcmol => null()
@@ -3092,7 +3092,7 @@
     use datatypes
     integer(i4),                            save :: maxnebreplicatot = 1
     integer(i4),                            save :: nnebiter
-    integer(i4),                            save :: nnebreplicatot 
+    integer(i4),                            save :: nnebreplicatot
     integer(i4), dimension(:),     pointer, save :: nnebreplica => null()
     integer(i4), dimension(:),     pointer, save :: nnebreplicano => null()
     integer(i4), dimension(:),     pointer, save :: nebreplicacfgptr => null()
@@ -3290,8 +3290,8 @@
 !
 !  Parallel execution related data
 !
-!  nprocs        = number of processors 
-!  procid        = local processor number 
+!  nprocs        = number of processors
+!  procid        = local processor number
 !  ioproc        = is the local node the I/O node?
 !  MPI_comm_GULP = MPI communicator for current process
 !
@@ -3307,8 +3307,8 @@
     integer(i4), dimension(:),   pointer, save :: atom2nodea => null()        ! Maps atoms to nodes - atom distribution
     integer(i4), dimension(:),   pointer, save :: atom2nodev => null()        ! Maps atoms to nodes - variable distribution
     integer(i4), dimension(:),   pointer, save :: node2atom => null()         ! Maps nodes to atoms
-    integer(i4), dimension(:),   pointer, save :: node2atoma => null()        ! Maps nodes to atoms - atom distribution 
-    integer(i4), dimension(:),   pointer, save :: node2atomv => null()        ! Maps nodes to atoms - variable distribution 
+    integer(i4), dimension(:),   pointer, save :: node2atoma => null()        ! Maps nodes to atoms - atom distribution
+    integer(i4), dimension(:),   pointer, save :: node2atomv => null()        ! Maps nodes to atoms - variable distribution
     integer(i4),                          save :: ncellonnode                 ! Number of cell variables on local node
     integer(i4),                          save :: ncellmaxonnode              ! Maximum cell variable on local node
     integer(i4),                          save :: ncellminonnode              ! Minimum cell variable on local node
@@ -3377,22 +3377,22 @@
     integer(i4),                               save :: nphonatonnodec           ! Number of reduced cores for phonon calculation on node
     integer(i4),                               save :: nphonatonnodes           ! Number of reduced shells for phonon calculation on node
     integer(i4),                               save :: nphonatonnodem           ! Number of reduced molecules for phonon calculation on node
-    integer(i4),      dimension(:),   pointer, save :: nphonatptr => null()     ! Pointer to map the reduced atoms to full ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatcptr => null()    ! Pointer to map the reduced cores to full ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatsptr => null()    ! Pointer to map the reduced shells to full ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatmptr => null()    ! Pointer to map the reduced molecules to full ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatrptr => null()    ! Pointer to map the full atoms to reduced ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatrcptr => null()   ! Pointer to map the full cores to reduced ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatrsptr => null()   ! Pointer to map the full shells to reduced ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatrmptr => null()   ! Pointer to map the full molecules to reduced ones 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodeptr => null()     ! Pointer to map the reduced atoms to full ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodecptr => null()    ! Pointer to map the reduced cores to full ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodesptr => null()    ! Pointer to map the reduced shells to full ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodemptr => null()    ! Pointer to map the reduced molecules to full ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnoderptr => null()    ! Pointer to map the full atoms to reduced ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodercptr => null()   ! Pointer to map the full cores to reduced ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodersptr => null()   ! Pointer to map the full shells to reduced ones - on node 
-    integer(i4),      dimension(:),   pointer, save :: nphonatonnodermptr => null()   ! Pointer to map the full molecules to reduced ones - on node 
+    integer(i4),      dimension(:),   pointer, save :: nphonatptr => null()     ! Pointer to map the reduced atoms to full ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatcptr => null()    ! Pointer to map the reduced cores to full ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatsptr => null()    ! Pointer to map the reduced shells to full ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatmptr => null()    ! Pointer to map the reduced molecules to full ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatrptr => null()    ! Pointer to map the full atoms to reduced ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatrcptr => null()   ! Pointer to map the full cores to reduced ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatrsptr => null()   ! Pointer to map the full shells to reduced ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatrmptr => null()   ! Pointer to map the full molecules to reduced ones
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodeptr => null()     ! Pointer to map the reduced atoms to full ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodecptr => null()    ! Pointer to map the reduced cores to full ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodesptr => null()    ! Pointer to map the reduced shells to full ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodemptr => null()    ! Pointer to map the reduced molecules to full ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnoderptr => null()    ! Pointer to map the full atoms to reduced ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodercptr => null()   ! Pointer to map the full cores to reduced ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodersptr => null()   ! Pointer to map the full shells to reduced ones - on node
+    integer(i4),      dimension(:),   pointer, save :: nphonatonnodermptr => null()   ! Pointer to map the full molecules to reduced ones - on node
   end module phononatoms
 !
 !  Phonon output data
@@ -3428,20 +3428,20 @@
 !
 !  Point group data
 !
-!      module pointgroups
-!        use datatypes
-!        character(len=4),                     save :: pgsymmetrylabel(47)
-!        integer(i4),                          save :: nchartables(12,12,32)
-!        integer(i4),                          save :: nchartablelabel(12,32)
-!        integer(i4),                          save :: nchartableoperator(12,32)
-!        integer(i4),                          save :: nchartableops(32)
-!        data nchartableops/1,2,2,2,4,4,4,8,4,4,8,6,6,6,12
-!        data pgsymmetrylabel/'A   ','Ag  ','Au  ','A!  ','A!! ','B   ','E   ','E1  ','E2  ',
-!     &    'A1  ','A2  ','B1  ','B2  ','Bg  ','Bu  ','E!  ','E!! ','Eg  ','Eu  ','B3  ','A1g ',
-!     &    'A2g ','A1u ','A2u ','B1g ','B2g ','B3g ','B1u ','B2u ','B3u ','A1! ','A2! ','A1!!',
-!     &    'A2!!','E1g ','E2g ','E1u ','E2u ','T   ','Tg  ','Tu  ','T1  ','T2  ','T1g ','T2g ',
-!     &    'T1u ','T2u '/
-!      end module pointgroups
+  module pointgroups
+    use datatypes
+    character(len=4),                     save :: pgsymmetrylabel(47)
+    integer(i4),                          save :: nchartables(12,12,32)
+    integer(i4),                          save :: nchartablelabel(12,32)
+    integer(i4),                          save :: nchartableoperator(12,32)
+    integer(i4),                          save :: nchartableops(15) !(32)
+    data nchartableops/1,2,2,2,4,4,4,8,4,4,8,6,6,6,12/
+    data pgsymmetrylabel  /'A   ','Ag  ','Au  ','A!  ','A!! ','B   ','E   ',&
+      'E1  ','E2  ','A1  ','A2  ','B1  ','B2  ','Bg  ','Bu  ','E!  ','E!! ',&
+      'Eg  ','Eu  ','B3  ','A1g ','A2g ','A1u ','A2u ','B1g ','B2g ','B3g ',&
+      'B1u ','B2u ','B3u ','A1! ','A2! ','A1!!','A2!!','E1g ','E2g ','E1u ',&
+      'E2u ','T   ','Tg  ','Tu  ','T1  ','T2  ','T1g ','T2g ','T1u ','T2u '/
+  end module pointgroups
 !
 !  Polarisability data
 !
@@ -3787,16 +3787,16 @@
 !   7 = p_ovun6
 !   8 = p_ovun7
 !   9 = p_ovun8
-!  10 = 
-!  11 = 
-!  12 = 
-!  13 = 
-!  14 = 
+!  10 =
+!  11 =
+!  12 =
+!  13 =
+!  14 =
 !  15 = p_val6
 !  16 = p_val8
 !  17 = p_val9
 !  18 = p_val10
-!  19 = 
+!  19 =
 !  20 = p_pen2
 !  21 = p_pen3
 !  22 = p_pen4
@@ -3849,10 +3849,10 @@
     real(dp),    dimension(:),     pointer, save :: d2j2 => null()
     real(dp),    dimension(:),     pointer, save :: rderiv => null()          ! First derivative w.r.t. radius
     real(dp),    dimension(:,:),   pointer, save :: rpd => null()             ! Contains products (two Cartesian coordinates)
-    real(dp),    dimension(:,:),   pointer, save :: dr2ds => null()           ! Contains strain first derivatives 
-    real(dp),    dimension(:,:,:), pointer, save :: d2r2ds2 => null()         ! Contains strain second derivatives 
+    real(dp),    dimension(:,:),   pointer, save :: dr2ds => null()           ! Contains strain first derivatives
+    real(dp),    dimension(:,:,:), pointer, save :: d2r2ds2 => null()         ! Contains strain second derivatives
     real(dp),    dimension(:,:,:), pointer, save :: d2r2dsdx => null()        ! Contains strain/Cartesian second derivatives for fractionals
-    real(dp),    dimension(:,:),   pointer, save :: d2r2dx2 => null()         ! Contains Cartesian second derivatives 
+    real(dp),    dimension(:,:),   pointer, save :: d2r2dx2 => null()         ! Contains Cartesian second derivatives
     real(dp),    dimension(:),     pointer, save :: rtrm1 => null()
     real(dp),    dimension(:),     pointer, save :: rtrm2 => null()
     real(dp),    dimension(:),     pointer, save :: rtrm3 => null()
@@ -3943,7 +3943,7 @@
 !
     logical,                                    save :: out_eig_flag
 !
-    character(len=maxwordlength),               save :: q_filename                         
+    character(len=maxwordlength),               save :: q_filename
     character(len=maxwordlength),               save :: sofomega_filename
 !
     integer(i4),                                save :: nq_step
@@ -3981,7 +3981,7 @@
     real(dp),    dimension(:,:),       pointer, save :: sofomega => null()
     real(dp),    dimension(:,:),       pointer, save :: sofomega_fit => null()
     real(dp),    dimension(:,:),       pointer, save :: tauvector => null()
-  end module scatterdata  
+  end module scatterdata
 !
 !  Shell model related data
 !
@@ -4587,7 +4587,7 @@
     real(dp),                                    save :: tlambda = 100.0_dp       ! Simulation time per lamdba value
   end module m_ti
 !
-!  Thresholds 
+!  Thresholds
 !
   module thresholds
     use datatypes

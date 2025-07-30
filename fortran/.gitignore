@@ -1,6 +1,7 @@
 Src/*/makefile
 Src/gulp
 Build
+build
 
 # Prerequisites
 *.d

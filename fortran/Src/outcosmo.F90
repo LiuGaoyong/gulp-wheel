@@ -79,7 +79,7 @@
 !*************************
 !  Output COSMO details  *
 !*************************
-  write(iout,''COSMO Results from GULP'',/)')
+  write(iout,'(A/)') 'COSMO Results from GULP'
 !
   ndummy = 1
 !
@@ -88,7 +88,7 @@
   write(iout,'(''Note: COSMO for ideal conductor limit (fepsi= 1.0000)'')')
   write(iout,'(''  Number of Segments on an Atom    = '',i6)') nspa
   write(iout,'(''  Number of Segments on Hydrogen   = '',i6)') nspah
-  write(iout,'(''  Solvent Radius    [au]           = '',f6.2)') cosmorsolv(ncf)/angtoau
+  write(iout,'(''  Solvent Radius [angstrom]        = '',f6.2)') cosmorsolv(ncf)  !/angtoau
   write(iout,'(''  IBS-SAS alf                      = '',f6.2)') cosmormax
   write(iout,'(''  maximum segment or cutoff radius = '',f6.2)') cosmormaxs
   write(iout,'(''  total number of segments         = '',i6)') npts
