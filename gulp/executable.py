@@ -18,9 +18,12 @@ def gulp():
     )
 
 
-def available() -> bool:
+def available(verbose: bool = False) -> bool:
     test_file = os.path.join("fortran", "Examples", "example1.gin")
     test_file = os.path.join(ROOT_DIR, "..", test_file)
+    if verbose:
+        print(EXE)
+        print(test_file)
     if os.path.exists(EXE) and os.path.isfile(EXE):
         pass
     else:
@@ -32,6 +35,8 @@ def available() -> bool:
         cwd=mkdtemp(),
         shell=True,
     )
+    if verbose:
+        print(f"Subprocess result: {result}")
     if result.returncode != 0:
         return False
     out, has_decode = result.stdout, False
@@ -44,6 +49,8 @@ def available() -> bool:
             has_decode = False
     if not has_decode:
         raise Exception(f"Cannot decode the output {out} of the subprocess")
+    if verbose:
+        print(out)
 
     if "Julian Gale" in out and "Version = 6.2.0" in out:  # type: ignore
         return True

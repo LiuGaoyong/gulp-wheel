@@ -5,25 +5,25 @@ on:
 
 jobs:
   build_wheels:
-    name: Build wheels for cp${{ matrix.python }}-${{ matrix.platform_id }}
+    name: Build wheels for ${{ matrix.platform_id }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - os: windows-latest
-            python: 312
-            platform_id: win_amd64
-          - os: ubuntu-latest
-            python: 312
-            platform_id: manylinux_x86_64
-          - os: ubuntu-24.04-arm
-            python: 312
-            platform_id: manylinux_aarch64
-          - os: macos-latest
-            python: 312
-            macos_target: 14
-            platform_id: macosx_arm64
+          # - os: windows-latest
+          #   python: 312
+          #   platform_id: win_amd64
+          # - os: ubuntu-latest
+          #   python: 312
+          #   platform_id: manylinux_x86_64
+          # - os: ubuntu-24.04-arm
+          #   python: 312
+          #   platform_id: manylinux_aarch64
+          # - os: macos-latest
+          #   python: 312
+          #   macos_target: 14
+          #   platform_id: macosx_arm64
           - os: macos-13
             python: 312
             macos_target: 13
@@ -66,7 +66,7 @@ jobs:
         run: |
           mv wheelhouse dist
           pipx run --python 3.13 delvewheel==1.10 repair dist/*.whl -vv
-          ls -l wheelhouse/*
+          ls -lh wheelhouse/*
           uv sync
           uv pip install wheelhouse/*.whl
           cd .venv
@@ -86,7 +86,7 @@ jobs:
           MACOSX_DEPLOYMENT_TARGET: ${{ matrix.macos_target }}.0
       - name: Test (MacOS & Linux)
         run: |
-          ls -l wheelhouse/*
+          ls -lh wheelhouse/*
           uv sync
           uv pip install wheelhouse/*.whl
           cd .venv
