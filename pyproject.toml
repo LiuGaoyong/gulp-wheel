@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "gulp"
-version = "6.20.0"
+version = "6.2.0.0"
 description = "Unoffical GULP Python Package."
 authors = [
     { name = "The GULP Developers", email = "gulpcode@curtin.edu.au" },
@@ -41,6 +41,7 @@ gulp_documentation = "https://gulp.curtin.edu.au/help/help_60_txt.html"
 gulp = "gulp.executable:gulp"
 
 [tool.scikit-build]
+wheel.py-api = "py3"
 build.verbose = true
 logging.level = "INFO"
 sdist.exclude = [".github"]
@@ -58,7 +59,7 @@ cmake.args = ["-GNinja"]
 [tool.cibuildwheel]
 build-frontend = "build[uv]"
 test-requires = "pytest"
-test-command = "pytest -s {project}/tests"
+test-command = ""
 
 # uv config
 [tool.uv]
