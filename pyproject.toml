@@ -41,6 +41,7 @@ gulp_documentation = "https://gulp.curtin.edu.au/help/help_60_txt.html"
 gulp = "gulp.executable:gulp"
 
 [tool.scikit-build]
+wheel.py-api = "py3"
 build.verbose = true
 logging.level = "INFO"
 sdist.exclude = [".github"]

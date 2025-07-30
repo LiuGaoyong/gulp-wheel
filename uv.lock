@@ -25,6 +25,7 @@ wheels = [
 
 [[package]]
 name = "gulp"
+version = "6.20.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
