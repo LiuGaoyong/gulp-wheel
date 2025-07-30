@@ -64,9 +64,6 @@
 #ifdef TRACE
   use trace,           only : trace_in, trace_out
 #endif
-#ifdef ACCELRYS
-  use license
-#endif
   implicit none
 !
   character(len=40) :: hostname
@@ -112,7 +109,7 @@
   call license_checkout(nprocs,ierror)
   if (ierror.ne.0) call gulpfinish
 ! Set traps for signals
-  
+
   call setup_traps()
 #endif
   call gulp_banner

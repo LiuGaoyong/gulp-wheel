@@ -35,13 +35,13 @@
 !   1/97 Dynamic memory introduced by direct call of malloc
 !        or via a C subroutine call
 !  12/97 Reduction of memory added when only EEM/QEq uses derv2
-!        and passing of derv2 to MD routines added so that 
+!        and passing of derv2 to MD routines added so that
 !        variable charges can be used in MD.
 !   4/98 Input is now passed through twice and stored temporarily
 !        on channel 4.
 !   5/98 Dynamic memory allocation for Linux phonons moved to
 !        top level as this is the only way to make this OS work.
-!   5/98 Structure of defect calls rearranged as this avoids 
+!   5/98 Structure of defect calls rearranged as this avoids
 !        problems under Linux - avoid any call to free as this
 !        causes Linux to core dump
 !   3/99 MPI parallelisation of MD introduced into standard version
@@ -79,9 +79,6 @@
   use gulpchemsh
   use iochannels
   use parallel
-#ifdef ACCELRYS
-  use license
-#endif
 #ifdef TRACE
   use trace,     only : init_trace, trace_in, trace_out
 #endif
@@ -125,9 +122,9 @@
     ioout = 16
     inquire(unit=ioout,opened=linquire)
     if (linquire) close(ioout)
-     
+
     call GetGulpFileNames(infile, outfile, 132 )
-     
+
     if (outfile .ne. "stdout")then
       open(unit=ioout,file=outfile,form='formatted')
     else
@@ -164,7 +161,7 @@
     if (ierror /= 0) call gulpfinish
 #endif
   endif
-      
+
 #ifdef OLDCS
   if (ichemsh_qm.ne.99) call gulp_options
 #else
@@ -198,7 +195,7 @@
 
   end subroutine gulpmain
 
-!    
+!
 !  03/Jul/2007 aperlov:
 !  This routine opens input/output files  if seedname is an argument of the command line
 !  (output file is open only for the ioproc)
@@ -218,9 +215,9 @@
     call get_command_argument(1,seedname)
   endif
 
-!  
+!
 !  Open input file explicitly
-! 
+!
   if (seedname .ne. "") then
 !
 !  Set a flag that indicates that all I/O in parallel should be via the I/O proc

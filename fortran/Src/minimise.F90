@@ -63,7 +63,7 @@
 !   1/11 Print out for Cycle line modified for force minimisation case
 !   9/11 Modified to allow for larger time values
 !  11/11 Threshold for changing the format of time printing corrected
-!  10/12 Steepest descents now used when Hessian is reset rather than 
+!  10/12 Steepest descents now used when Hessian is reset rather than
 !        diagonal Hessian.
 !  10/12 Control C handling added
 !  10/12 Control C handling modified so that loop does not exit during
@@ -139,9 +139,6 @@
   use parallel
   use trap,           only : trap_fc, ltrap_fc
   use xcgc,           only : lnudgegc
-#ifdef ACCELRYS
-  use license
-#endif
 #ifdef TRACE
   use trace,          only : trace_in, trace_out
 #endif
@@ -617,7 +614,7 @@
 !************************
 !  Limited memory BFGS  *
 !************************
-    do i = 1,nvar 
+    do i = 1,nvar
       xlast(i) = xc(i)
       glast(i) = gsca*gc(i)
     enddo
@@ -854,7 +851,7 @@
               do j = 1,nvar
                 hessian(j,il) = hessian(j,il) + rhh*(vhi + gvar(j)*xvar(j) - rhh*vhi*gvar(j)*xvar(j))
               enddo
-            enddo      
+            enddo
           else
             do i = 1,nvar
               vhi = gvar(i)*xvar(i)
@@ -862,7 +859,7 @@
                 k = k + 1
                 hessian(k,1) = hessian(k,1) + rhh*(vhi + gvar(j)*xvar(j) - rhh*vhi*gvar(j)*xvar(j))
               enddo
-            enddo      
+            enddo
           endif
         else
 !
@@ -1273,7 +1270,7 @@
 !
 !  Check on xtol removed since this can cause problems if the line
 !  minimiser is efficient because it is basis on a change for the
-!  last cycle rather than a prediction for the next one. 
+!  last cycle rather than a prediction for the next one.
 !
   if (lfok.and.lgok.and.lgmaxok) then
     ifail = 0

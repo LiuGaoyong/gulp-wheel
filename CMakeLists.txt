@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
+project(GULP LANGUAGES Fortran C)
 
-set(PYBIND11_FINDPYTHON ON)
-find_package(pybind11 CONFIG REQUIRED)
-
-pybind11_add_module(_core MODULE src/main.cpp)
-install(TARGETS _core DESTINATION ${SKBUILD_PROJECT_NAME})
+add_subdirectory(fortran)
+install(TARGETS gulp DESTINATION gulp)

@@ -20,7 +20,7 @@
 !
 !   2/97 Modifications from JRH added for GC / Shell model MD
 !   3/97 Breathing shell MD with opt at each step added
-!   3/97 NVT ensemble added 
+!   3/97 NVT ensemble added
 !   8/97 Scaling of C-S temperature during production added
 !   6/01 Reset of averages only performed at end of equilibration
 !        if there is to be production - this enables restarting
@@ -36,7 +36,7 @@
 !  12/07 Unused variables removed
 !  12/07 Target temperature now added as a variable
 !   3/08 New MD integrator added
-!   4/08 Call to mdfunct added before start of run to initialise forces 
+!   4/08 Call to mdfunct added before start of run to initialise forces
 !        and stress
 !   8/08 Metadynamics introduced directly into MD routine
 !   2/09 New argument added to mdprop call
@@ -91,9 +91,6 @@
   use m_ti
   use parallel
   use shells
-#ifdef ACCELRYS
-  use license
-#endif
 #ifdef TRACE
   use trace,          only : trace_in, trace_out
 #endif
@@ -190,8 +187,8 @@
   if ((nshell+nbsmat).ne.0) then
     call setspring(spring,bspring)
 !
-!  If adiabatic calculation optimise shell positions/radii before 
-!  MD is started to avoid large forces in the beginning of the MD 
+!  If adiabatic calculation optimise shell positions/radii before
+!  MD is started to avoid large forces in the beginning of the MD
 !  run
 !
     if (ladiabatic) call optshe(0_i4,fc,iter,spring,bspring)
@@ -232,7 +229,7 @@
       call mdprop(fc,i,nmds,targettemperature,.false.)
       if (nmdintegrator.ne.4) then
         if (timesofar.le.tscale.and.mod(i,nsint).eq.0) call mdscale(lprod)
-      endif 
+      endif
       call mdvelcor(ndim.eq.0.and..not.lmd_inc_rot,.true.,.false.)
       timesofar = timesofar + tstp
       if (lwritecycle) then
