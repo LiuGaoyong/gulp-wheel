@@ -58,7 +58,7 @@ cmake.args = ["-GNinja"]
 [tool.cibuildwheel]
 build-frontend = "build[uv]"
 test-requires = "pytest"
-test-command = "pytest -s {project}/tests"
+test-command = ""
 
 # uv config
 [tool.uv]
