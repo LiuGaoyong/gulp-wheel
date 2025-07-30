@@ -1,7 +1,7 @@
 import os
 import subprocess
 import sys
-from tempfile import mkdtemp
+from tempfile import TemporaryDirectory
 
 ROOT_DIR = os.path.dirname(__file__)
 __SUFFIX = ".exe" if os.name == "nt" else ""
@@ -19,22 +19,50 @@ def gulp():
 
 
 def available(verbose: bool = False) -> bool:
-    test_file = os.path.join("fortran", "Examples", "example1.gin")
-    test_file = os.path.join(ROOT_DIR, "..", test_file)
-    if verbose:
-        print(EXE)
-        print(test_file)
-    if os.path.exists(EXE) and os.path.isfile(EXE):
-        pass
-    else:
-        return False
+    with TemporaryDirectory() as tmpdir:
+        test_file = os.path.join(tmpdir, "example1.gin")
+        with open(test_file, "w") as f:
+            f.write("""opti prop conp
+title
+alumina test file
+end
+cell
+4.7602   4.7602  12.9933  90.000000  90.000000 120.0
+frac
+Al core 0.000000   0.000000   0.352160
+Al shel 0.000000   0.000000   0.352160
+O  core 0.306240   0.000000   0.250000
+O  shel 0.306240   0.000000   0.250000
+space
+167
+species
+Al core  0.043
+Al shel  2.957
+O  core  0.513
+O  shel -2.513
+buckingham
+Al shel O shel  2409.505 0.2649  0.00 0.0 10.0
+O  shel O shel    25.410 0.6937 32.32 0.0 12.0
+spring
+Al 403.98
+O   20.53
+output xr example1
+output marvin example1.mvn
+""")
+        if verbose:
+            print(f"The GULP program: {EXE}")
+            print(f"Test GULP program with file: {test_file}")
+        if os.path.exists(EXE) and os.path.isfile(EXE):
+            pass
+        else:
+            return False
+        result = subprocess.run(
+            [f"{EXE} < {test_file}"],
+            capture_output=True,
+            cwd=tmpdir,
+            shell=True,
+        )
 
-    result = subprocess.run(
-        [f"{EXE} < {test_file}"],
-        capture_output=True,
-        cwd=mkdtemp(),
-        shell=True,
-    )
     if verbose:
         print(f"Subprocess result: {result}")
     if result.returncode != 0:
@@ -59,4 +87,4 @@ def available(verbose: bool = False) -> bool:
 
 
 if __name__ == "__main__":
-    assert available()
+    assert available(verbose=True)
